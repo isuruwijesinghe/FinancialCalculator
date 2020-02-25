@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A2EA7DA24025FCB009FD03E /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EA7D924025FCB009FD03E /* SavingsViewController.swift */; };
+		3A91CF0223EDAF2600D1AB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF0123EDAF2600D1AB52 /* AppDelegate.swift */; };
+		3A91CF0423EDAF2600D1AB52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF0323EDAF2600D1AB52 /* SceneDelegate.swift */; };
+		3A91CF0923EDAF2600D1AB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A91CF0723EDAF2600D1AB52 /* Main.storyboard */; };
+		3A91CF0C23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF0A23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodeld */; };
+		3A91CF0E23EDAF2800D1AB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A91CF0D23EDAF2800D1AB52 /* Assets.xcassets */; };
+		3A91CF1123EDAF2800D1AB52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A91CF0F23EDAF2800D1AB52 /* LaunchScreen.storyboard */; };
+		3A91CF1C23EDAF2900D1AB52 /* FinancialCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF1B23EDAF2900D1AB52 /* FinancialCalculatorTests.swift */; };
+		3A91CF2723EDAF2900D1AB52 /* FinancialCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF2623EDAF2900D1AB52 /* FinancialCalculatorUITests.swift */; };
+		3A91CF3623EEB53D00D1AB52 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF3523EEB53D00D1AB52 /* KeyboardViewController.swift */; };
+		3A91CF3A23EEB84C00D1AB52 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF3923EEB84C00D1AB52 /* ParentViewController.swift */; };
+		3A91CF3C23EEBCFD00D1AB52 /* CompoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF3B23EEBCFD00D1AB52 /* CompoundViewController.swift */; };
+		3A91CF3F23EED7D800D1AB52 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF3E23EED7D800D1AB52 /* Calculations.swift */; };
+		3A91CF4123EF48E000D1AB52 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A91CF4023EF48E000D1AB52 /* StartViewController.swift */; };
+		3A97597F23F036C20018A929 /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97597E23F036C20018A929 /* MortgageViewController.swift */; };
+		3A97598123F171B50018A929 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97598023F171B50018A929 /* Storage.swift */; };
+		3A97598323F184990018A929 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97598223F184990018A929 /* HistoryViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A91CF1823EDAF2900D1AB52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A91CEF623EDAF2600D1AB52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A91CEFD23EDAF2600D1AB52;
+			remoteInfo = FinancialCalculator;
+		};
+		3A91CF2323EDAF2900D1AB52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A91CEF623EDAF2600D1AB52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A91CEFD23EDAF2600D1AB52;
+			remoteInfo = FinancialCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A2EA7D924025FCB009FD03E /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		3A91CEFE23EDAF2600D1AB52 /* FinancialCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A91CF0123EDAF2600D1AB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A91CF0323EDAF2600D1AB52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A91CF0823EDAF2600D1AB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A91CF0B23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinancialCalculator.xcdatamodel; sourceTree = "<group>"; };
+		3A91CF0D23EDAF2800D1AB52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A91CF1023EDAF2800D1AB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A91CF1223EDAF2800D1AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A91CF1723EDAF2900D1AB52 /* FinancialCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A91CF1B23EDAF2900D1AB52 /* FinancialCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialCalculatorTests.swift; sourceTree = "<group>"; };
+		3A91CF1D23EDAF2900D1AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A91CF2223EDAF2900D1AB52 /* FinancialCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A91CF2623EDAF2900D1AB52 /* FinancialCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialCalculatorUITests.swift; sourceTree = "<group>"; };
+		3A91CF2823EDAF2900D1AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A91CF3523EEB53D00D1AB52 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		3A91CF3923EEB84C00D1AB52 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		3A91CF3B23EEBCFD00D1AB52 /* CompoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewController.swift; sourceTree = "<group>"; };
+		3A91CF3E23EED7D800D1AB52 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		3A91CF4023EF48E000D1AB52 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		3A97597E23F036C20018A929 /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
+		3A97598023F171B50018A929 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		3A97598223F184990018A929 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A91CEFB23EDAF2600D1AB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF1423EDAF2900D1AB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF1F23EDAF2900D1AB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A91CEF523EDAF2600D1AB52 = {
+			isa = PBXGroup;
+			children = (
+				3A91CF0023EDAF2600D1AB52 /* FinancialCalculator */,
+				3A91CF1A23EDAF2900D1AB52 /* FinancialCalculatorTests */,
+				3A91CF2523EDAF2900D1AB52 /* FinancialCalculatorUITests */,
+				3A91CEFF23EDAF2600D1AB52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A91CEFF23EDAF2600D1AB52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CEFE23EDAF2600D1AB52 /* FinancialCalculator.app */,
+				3A91CF1723EDAF2900D1AB52 /* FinancialCalculatorTests.xctest */,
+				3A91CF2223EDAF2900D1AB52 /* FinancialCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A91CF0023EDAF2600D1AB52 /* FinancialCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CF3D23EED77500D1AB52 /* Utilities */,
+				3A91CF3423EEB50F00D1AB52 /* Controllers */,
+				3A91CF0123EDAF2600D1AB52 /* AppDelegate.swift */,
+				3A91CF0323EDAF2600D1AB52 /* SceneDelegate.swift */,
+				3A91CF0723EDAF2600D1AB52 /* Main.storyboard */,
+				3A91CF0D23EDAF2800D1AB52 /* Assets.xcassets */,
+				3A91CF0F23EDAF2800D1AB52 /* LaunchScreen.storyboard */,
+				3A91CF1223EDAF2800D1AB52 /* Info.plist */,
+				3A91CF0A23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodeld */,
+			);
+			path = FinancialCalculator;
+			sourceTree = "<group>";
+		};
+		3A91CF1A23EDAF2900D1AB52 /* FinancialCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CF1B23EDAF2900D1AB52 /* FinancialCalculatorTests.swift */,
+				3A91CF1D23EDAF2900D1AB52 /* Info.plist */,
+			);
+			path = FinancialCalculatorTests;
+			sourceTree = "<group>";
+		};
+		3A91CF2523EDAF2900D1AB52 /* FinancialCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CF2623EDAF2900D1AB52 /* FinancialCalculatorUITests.swift */,
+				3A91CF2823EDAF2900D1AB52 /* Info.plist */,
+			);
+			path = FinancialCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		3A91CF3423EEB50F00D1AB52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CF3523EEB53D00D1AB52 /* KeyboardViewController.swift */,
+				3A91CF3923EEB84C00D1AB52 /* ParentViewController.swift */,
+				3A91CF3B23EEBCFD00D1AB52 /* CompoundViewController.swift */,
+				3A91CF4023EF48E000D1AB52 /* StartViewController.swift */,
+				3A97597E23F036C20018A929 /* MortgageViewController.swift */,
+				3A97598223F184990018A929 /* HistoryViewController.swift */,
+				3A2EA7D924025FCB009FD03E /* SavingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A91CF3D23EED77500D1AB52 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A91CF3E23EED7D800D1AB52 /* Calculations.swift */,
+				3A97598023F171B50018A929 /* Storage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A91CEFD23EDAF2600D1AB52 /* FinancialCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A91CF2B23EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculator" */;
+			buildPhases = (
+				3A91CEFA23EDAF2600D1AB52 /* Sources */,
+				3A91CEFB23EDAF2600D1AB52 /* Frameworks */,
+				3A91CEFC23EDAF2600D1AB52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinancialCalculator;
+			productName = FinancialCalculator;
+			productReference = 3A91CEFE23EDAF2600D1AB52 /* FinancialCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A91CF1623EDAF2900D1AB52 /* FinancialCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A91CF2E23EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculatorTests" */;
+			buildPhases = (
+				3A91CF1323EDAF2900D1AB52 /* Sources */,
+				3A91CF1423EDAF2900D1AB52 /* Frameworks */,
+				3A91CF1523EDAF2900D1AB52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A91CF1923EDAF2900D1AB52 /* PBXTargetDependency */,
+			);
+			name = FinancialCalculatorTests;
+			productName = FinancialCalculatorTests;
+			productReference = 3A91CF1723EDAF2900D1AB52 /* FinancialCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A91CF2123EDAF2900D1AB52 /* FinancialCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A91CF3123EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculatorUITests" */;
+			buildPhases = (
+				3A91CF1E23EDAF2900D1AB52 /* Sources */,
+				3A91CF1F23EDAF2900D1AB52 /* Frameworks */,
+				3A91CF2023EDAF2900D1AB52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A91CF2423EDAF2900D1AB52 /* PBXTargetDependency */,
+			);
+			name = FinancialCalculatorUITests;
+			productName = FinancialCalculatorUITests;
+			productReference = 3A91CF2223EDAF2900D1AB52 /* FinancialCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A91CEF623EDAF2600D1AB52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Isuru Wijesinghe";
+				TargetAttributes = {
+					3A91CEFD23EDAF2600D1AB52 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					3A91CF1623EDAF2900D1AB52 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 3A91CEFD23EDAF2600D1AB52;
+					};
+					3A91CF2123EDAF2900D1AB52 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 3A91CEFD23EDAF2600D1AB52;
+					};
+				};
+			};
+			buildConfigurationList = 3A91CEF923EDAF2600D1AB52 /* Build configuration list for PBXProject "FinancialCalculator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A91CEF523EDAF2600D1AB52;
+			productRefGroup = 3A91CEFF23EDAF2600D1AB52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A91CEFD23EDAF2600D1AB52 /* FinancialCalculator */,
+				3A91CF1623EDAF2900D1AB52 /* FinancialCalculatorTests */,
+				3A91CF2123EDAF2900D1AB52 /* FinancialCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A91CEFC23EDAF2600D1AB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A91CF1123EDAF2800D1AB52 /* LaunchScreen.storyboard in Resources */,
+				3A91CF0E23EDAF2800D1AB52 /* Assets.xcassets in Resources */,
+				3A91CF0923EDAF2600D1AB52 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF1523EDAF2900D1AB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF2023EDAF2900D1AB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A91CEFA23EDAF2600D1AB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2EA7DA24025FCB009FD03E /* SavingsViewController.swift in Sources */,
+				3A91CF3623EEB53D00D1AB52 /* KeyboardViewController.swift in Sources */,
+				3A91CF4123EF48E000D1AB52 /* StartViewController.swift in Sources */,
+				3A91CF3A23EEB84C00D1AB52 /* ParentViewController.swift in Sources */,
+				3A91CF0223EDAF2600D1AB52 /* AppDelegate.swift in Sources */,
+				3A91CF0C23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodeld in Sources */,
+				3A97598323F184990018A929 /* HistoryViewController.swift in Sources */,
+				3A97597F23F036C20018A929 /* MortgageViewController.swift in Sources */,
+				3A91CF0423EDAF2600D1AB52 /* SceneDelegate.swift in Sources */,
+				3A91CF3C23EEBCFD00D1AB52 /* CompoundViewController.swift in Sources */,
+				3A91CF3F23EED7D800D1AB52 /* Calculations.swift in Sources */,
+				3A97598123F171B50018A929 /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF1323EDAF2900D1AB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A91CF1C23EDAF2900D1AB52 /* FinancialCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A91CF1E23EDAF2900D1AB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A91CF2723EDAF2900D1AB52 /* FinancialCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A91CF1923EDAF2900D1AB52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A91CEFD23EDAF2600D1AB52 /* FinancialCalculator */;
+			targetProxy = 3A91CF1823EDAF2900D1AB52 /* PBXContainerItemProxy */;
+		};
+		3A91CF2423EDAF2900D1AB52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A91CEFD23EDAF2600D1AB52 /* FinancialCalculator */;
+			targetProxy = 3A91CF2323EDAF2900D1AB52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A91CF0723EDAF2600D1AB52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A91CF0823EDAF2600D1AB52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A91CF0F23EDAF2800D1AB52 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A91CF1023EDAF2800D1AB52 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A91CF2923EDAF2900D1AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A91CF2A23EDAF2900D1AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A91CF2C23EDAF2900D1AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3A91CF2D23EDAF2900D1AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3A91CF2F23EDAF2900D1AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinancialCalculator.app/FinancialCalculator";
+			};
+			name = Debug;
+		};
+		3A91CF3023EDAF2900D1AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinancialCalculator.app/FinancialCalculator";
+			};
+			name = Release;
+		};
+		3A91CF3223EDAF2900D1AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinancialCalculator;
+			};
+			name = Debug;
+		};
+		3A91CF3323EDAF2900D1AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY43CH87G2;
+				INFOPLIST_FILE = FinancialCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isuru.FinancialCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinancialCalculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A91CEF923EDAF2600D1AB52 /* Build configuration list for PBXProject "FinancialCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A91CF2923EDAF2900D1AB52 /* Debug */,
+				3A91CF2A23EDAF2900D1AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A91CF2B23EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A91CF2C23EDAF2900D1AB52 /* Debug */,
+				3A91CF2D23EDAF2900D1AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A91CF2E23EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A91CF2F23EDAF2900D1AB52 /* Debug */,
+				3A91CF3023EDAF2900D1AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A91CF3123EDAF2900D1AB52 /* Build configuration list for PBXNativeTarget "FinancialCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A91CF3223EDAF2900D1AB52 /* Debug */,
+				3A91CF3323EDAF2900D1AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A91CF0A23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A91CF0B23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodel */,
+			);
+			currentVersion = 3A91CF0B23EDAF2600D1AB52 /* FinancialCalculator.xcdatamodel */;
+			path = FinancialCalculator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3A91CEF623EDAF2600D1AB52 /* Project object */;
+}

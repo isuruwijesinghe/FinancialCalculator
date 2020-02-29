@@ -1,5 +1,5 @@
 //
-//  SavingsInterestRateValViewController.swift
+//  SavingsPresentValViewController.swift
 //  FinancialCalculator
 //
 //  Created by Isuru Wijesinghe on 2/29/20.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SavingsInterestRateValViewController: ParentViewController {
+class SavingsPresentValViewController: ParentViewController {
 
-   
     @IBOutlet weak var tf_PresentValue: UITextField!
     @IBOutlet weak var tf_Interest: UITextField!
     @IBOutlet weak var tf_NoOfPayments: UITextField!
@@ -97,29 +96,29 @@ class SavingsInterestRateValViewController: ParentViewController {
     // method to calculate and update the text fields
     func updateFields(){
         
-        if (tf_PresentValue.text != "0" && tf_InterestAmount.text != "0"  && tf_NoOfPayments.text != "0" ) {
+        if (tf_Interest.text != "0" && tf_InterestAmount.text != "0"  && tf_NoOfPayments.text != "0" ) {
             
             //get values update present value
             let interest_amount = (tf_InterestAmount.text! as NSString).doubleValue
             let noOfPayments = (tf_NoOfPayments.text! as NSString).doubleValue
-            let presentValue = (tf_PresentValue.text! as NSString).doubleValue
-            
-            let value: Double = Calculations.calSavingsInterestRate(I: interest_amount, P: presentValue, t: noOfPayments)
-            
+            var interest = (tf_Interest.text! as NSString).doubleValue
             //convert interest to decimal
-            let interest = value * 100
+            interest = interest / 100
+           
             
-            tf_Interest.text = String(format:"%.0f", interest)
+            let value: Double = Calculations.calSavingsPresentValue(I: interest_amount, R: interest, t: noOfPayments)
+            
+            tf_PresentValue.text = String(format:"%.2f", value)
             
             let redTFColor = UIColor.red
             let greenTFColor = UIColor.green
             
-            if tf_Interest.text == "0" {
-                tf_Interest.layer.borderColor = redTFColor.cgColor
-                tf_Interest.layer.borderWidth = 1.0
+            if tf_PresentValue.text == "0" {
+                tf_PresentValue.layer.borderColor = redTFColor.cgColor
+                tf_PresentValue.layer.borderWidth = 1.0
             } else{
-                tf_Interest.layer.borderColor = greenTFColor.cgColor
-                tf_Interest.layer.borderWidth = 1.0
+                tf_PresentValue.layer.borderColor = greenTFColor.cgColor
+                tf_PresentValue.layer.borderWidth = 1.0
             }
             
             
@@ -185,12 +184,12 @@ class SavingsInterestRateValViewController: ParentViewController {
         let redTFColor = UIColor.red
         let greenTFColor = UIColor.green
         
-        if tf_Interest.text == "0" {
-            tf_Interest.layer.borderColor = redTFColor.cgColor
-            tf_Interest.layer.borderWidth = 1.0
+        if tf_PresentValue.text == "0" {
+            tf_PresentValue.layer.borderColor = redTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         } else{
-            tf_Interest.layer.borderColor = greenTFColor.cgColor
-            tf_Interest.layer.borderWidth = 1.0
+            tf_PresentValue.layer.borderColor = greenTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         }
         
     }
@@ -203,9 +202,9 @@ class SavingsInterestRateValViewController: ParentViewController {
         tf_NoOfPayments.text = "0"
         
         let redTFColor = UIColor.red
-        if tf_Interest.text == "0" {
-            tf_Interest.layer.borderColor = redTFColor.cgColor
-            tf_Interest.layer.borderWidth = 1.0
+        if tf_PresentValue.text == "0" {
+            tf_PresentValue.layer.borderColor = redTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         }
     }
     

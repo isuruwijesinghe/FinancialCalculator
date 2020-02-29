@@ -62,12 +62,28 @@ class Calculations: NSObject {
     //     noOfPayments = t
     //     compoundsperyear = n = 12 by defult
     //     totalValue = Tot
+    //     InterestValue = I
     
 //    let FutureValue = PMT * ((pow((1 + R / n) , (n * t) ) - 1) / (R / n))
 //    let TotalValue = FV + P
     
     static func calSavingsFutureValue(PMT:Double, R:Double, t:Double, n:Double) -> Double{
         let answer: Double =  PMT * ((pow((1 + R / n) , (n * t) ) - 1) / (R / n))
+        return answer
+    }
+    
+    static func calSavingsPresentValue(I: Double, R:Double, t:Double) -> Double{
+        let answer: Double = I / ( R * t)
+        return answer
+    }
+    
+    static func calSavingsInterestRate(I: Double, P:Double, t:Double) -> Double{
+        let answer: Double = I / ( P * t)
+        return answer
+    }
+    
+    static func calSavingsTime(I: Double, P:Double, R:Double) -> Double{
+        let answer: Double = I / ( P * R)
         return answer
     }
     

@@ -52,11 +52,11 @@ class SavingsSelectionViewController: UIViewController, UIPickerViewDelegate, UI
         case "Future Value":
             self.performSegue(withIdentifier: "savingsFutureValSegue", sender: self)
         case "Present Value":
-            self.performSegue(withIdentifier: "compoundPresentSegue", sender: self)
+            self.performSegue(withIdentifier: "savingsPresentValSegue", sender: self)
         case "Interest Rate":
-            self.performSegue(withIdentifier: "compoundInterestSegue", sender: self)
+            self.performSegue(withIdentifier: "savingsInterestSegue", sender: self)
         case "No. of Years":
-            self.performSegue(withIdentifier: "compoundTimesSegue", sender: self)
+            self.performSegue(withIdentifier: "savingsTimeSegue", sender: self)
         default:
             self.performSegue(withIdentifier: "savingsFutureValSegue", sender: self)
         }

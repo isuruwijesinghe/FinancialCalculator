@@ -24,11 +24,13 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func genSelections(){
         
-        let compoundInterest = Selection(name: "Compound Interest", icon: UIImage(named: "pigBank")!, segueID: "1", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let compoundInterest = Selection(name: "Compound Interest", icon: UIImage(named: "pigBank")!, segueID: "1", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
         
-        let savings = Selection(name: "Savings", icon: UIImage(named: "savings")!, segueID: "2", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let savings = Selection(name: "Savings", icon: UIImage(named: "savings")!, segueID: "2", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
         
-        selections += [compoundInterest, savings]
+         let mortgage = Selection(name: "Mortgage", icon: UIImage(named: "mortage")!, segueID: "3", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
+        
+        selections += [compoundInterest, savings, mortgage]
         
     }
     
@@ -44,9 +46,7 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         //Card(cell) styles
         cell.contentView.backgroundColor = selections[indexPath.row].getCellColour()
-        cell.contentView.layer.cornerRadius = 10.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.00).cgColor
+        cell.contentView.layer.cornerRadius = 6.0
         cell.contentView.layer.masksToBounds = false
         
         return cell

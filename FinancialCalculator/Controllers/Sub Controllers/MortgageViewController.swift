@@ -20,7 +20,7 @@ class MortgageViewController: ParentViewController {
         clearTextFields()
         disableKeyBoards()
         getDataWhenReopen()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -73,7 +73,16 @@ class MortgageViewController: ParentViewController {
                     if((selectedText?.text?.count)! > 0) {
                         updateFields()
                     } else {
-                        clearTextFields()
+                        
+                        let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+                            self.clearTextFields()
+                        }))
+                        
+                        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil ))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
                     }
                 }
             }
@@ -95,6 +104,17 @@ class MortgageViewController: ParentViewController {
             let value : Double = Calculations.calPMTValue(P: presentValue, R: interest, n: noOfPayments)
             
             tf_Payment.text = String(format:"%.2f", value)
+            
+            let redTFColor = UIColor.red
+            let greenTFColor = UIColor.green
+            
+            if tf_Payment.text == "0" {
+                tf_Payment.layer.borderColor = redTFColor.cgColor
+                tf_Payment.layer.borderWidth = 1.0
+            } else{
+                tf_Payment.layer.borderColor = greenTFColor.cgColor
+                tf_Payment.layer.borderWidth = 1.0
+            }
         }
         
     }
@@ -153,6 +173,17 @@ class MortgageViewController: ParentViewController {
         tf_LoanAmount.text = defaults.string(forKey: "mortgage_loanAmount")
         tf_NoOfMonths.text = defaults.string(forKey: "mortgage_noOfMonths")
         tf_Payment.text = defaults.string(forKey: "mortgage_payment")
+        
+        let redTFColor = UIColor.red
+        let greenTFColor = UIColor.green
+        
+        if tf_Payment.text == "0" {
+            tf_Payment.layer.borderColor = redTFColor.cgColor
+            tf_Payment.layer.borderWidth = 1.0
+        } else{
+            tf_Payment.layer.borderColor = greenTFColor.cgColor
+            tf_Payment.layer.borderWidth = 1.0
+        }
 
     }
     
@@ -162,6 +193,13 @@ class MortgageViewController: ParentViewController {
         tf_Interest.text = "0"
         tf_Payment.text = "0"
         tf_NoOfMonths.text = "0"
+        
+        let redTFColor = UIColor.red
+        
+        if tf_Payment.text == "0" {
+            tf_Payment.layer.borderColor = redTFColor.cgColor
+            tf_Payment.layer.borderWidth = 1.0
+        }
     }
     
     // disable soft keyboard
@@ -170,6 +208,10 @@ class MortgageViewController: ParentViewController {
         tf_Interest.inputView = UIView()
         tf_Payment.inputView = UIView()
         tf_NoOfMonths.inputView = UIView()
+    }
+    
+    @IBAction func BackBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 

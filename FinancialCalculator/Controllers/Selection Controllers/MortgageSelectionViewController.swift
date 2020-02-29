@@ -1,0 +1,59 @@
+//
+//  MortgageSelectionViewController.swift
+//  FinancialCalculator
+//
+//  Created by Isuru Wijesinghe on 2/27/20.
+//  Copyright © 2020 Isuru Wijesinghe. All rights reserved.
+//
+
+import UIKit
+
+class MortgageSelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var selections = ["Payment", "Interest"]
+    var selected : String? = "Payment"
+    @IBOutlet weak var mortgagePickerView: UIPickerView!
+    @IBOutlet weak var buttonConfirmCalculation: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //setting picker views default value to the 0th position
+        mortgagePickerView.selectRow(0, inComponent: 0, animated: true)
+        
+//        buttonConfirmCalculation border in black with 5 corner radius
+        buttonConfirmCalculation.backgroundColor = .clear
+        buttonConfirmCalculation.layer.cornerRadius = 5
+        buttonConfirmCalculation.layer.borderWidth = 1.0
+        buttonConfirmCalculation.layer.borderColor = UIColor.black.cgColor
+
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        selections.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        selections[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selected = selections[row]
+    }
+    
+    
+    @IBAction func calculationButtonPressed(_ sender: UIButton) {
+        
+        if selected == "Payment"{
+            self.performSegue(withIdentifier: "mortgagePaymentSegue", sender: self)
+        }
+        
+    }
+    
+}

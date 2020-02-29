@@ -25,7 +25,7 @@ class MortgageSelectionViewController: UIViewController, UIPickerViewDelegate, U
         buttonConfirmCalculation.backgroundColor = .clear
         buttonConfirmCalculation.layer.cornerRadius = 5
         buttonConfirmCalculation.layer.borderWidth = 1.0
-        buttonConfirmCalculation.layer.borderColor = UIColor.black.cgColor
+        buttonConfirmCalculation.layer.borderColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00).cgColor
 
         
         // Do any additional setup after loading the view.

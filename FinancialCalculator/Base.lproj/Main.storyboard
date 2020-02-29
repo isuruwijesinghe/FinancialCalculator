@@ -684,6 +684,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="t1j-fa-pTL"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.027450980390000001" green="0.1843137255" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Help" id="kuV-x1-lMK"/>
                                 </items>
@@ -713,6 +717,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvc-Y9-j1X">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="barTintColor" red="0.027450980390000001" green="0.1843137255" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Mortage" id="VLf-jZ-9lM"/>
                                 </items>
@@ -720,7 +728,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select from below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXE-Gu-IEe">
                                 <rect key="frame" x="16" y="101" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nq-jj-kM2">
@@ -733,6 +741,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-W3-Okr">
                                 <rect key="frame" x="120" y="439.5" width="140" height="30"/>
                                 <state key="normal" title="Conform">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
@@ -740,7 +749,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.58431372550000005" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0Nq-jj-kM2" firstAttribute="centerX" secondItem="ch2-cd-aUZ" secondAttribute="centerX" id="9BH-Ca-VyR"/>
                             <constraint firstItem="hgs-W3-Okr" firstAttribute="leading" secondItem="E1t-Tw-BDk" secondAttribute="leading" constant="120" id="Fbb-Ah-OpC"/>

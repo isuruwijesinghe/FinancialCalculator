@@ -44,7 +44,7 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setFormulasWithSupperScripts(){
         
         let font:UIFont? = UIFont(name: "Helvetica", size:16)
-        let fontSuper:UIFont? = UIFont(name: "Helvetica", size:10)
+        let fontSuper:UIFont? = UIFont(name: "Helvetica", size:12)
         
         // MARK: - Compound Interest Savings
         
@@ -85,6 +85,17 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         formulas.append(Formula.init(type: "Simple Savings", formulaName: ["Future Value", "Principal Value", "Interest Rate", "No . of Times"], formulas: [s_FValue, s_PValue, s_RValue, s_TValue]))
         
         // MARK: - Mortgage
+        
+        let m_PMTValue:NSMutableAttributedString = NSMutableAttributedString(string: "PMT = P(R/t)(1 + R/t)(nt) / (1 + R/t)(nt) - 1 ", attributes: [.font:font!])
+        m_PMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:21,length:4))
+        m_PMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:37,length:4))
+        
+        let m_PValue:NSMutableAttributedString = NSMutableAttributedString(string: "P = PMT(1 + R/t)(nt) - 1) / R/t(1 + R/t)(nt)", attributes: [.font:font!])
+        m_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:16,length:4))
+        m_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:40,length:4))
+        
+        formulas.append(Formula.init(type: "Mortgage", formulaName: ["Payment", "Principal Value"], formulas: [m_PMTValue, m_PValue]))
+
         
     }
     

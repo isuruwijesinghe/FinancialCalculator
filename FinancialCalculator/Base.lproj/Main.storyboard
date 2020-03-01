@@ -674,7 +674,7 @@
         <!--Help-->
         <scene sceneID="Eim-2I-NLs">
             <objects>
-                <viewController id="T6V-6N-kPa" sceneMemberID="viewController">
+                <viewController id="T6V-6N-kPa" customClass="HelpViewController" customModule="FinancialCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0l-pz-rTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -692,12 +692,64 @@
                                     <navigationItem title="Help" id="kuV-x1-lMK"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uO1-sQ-7PL">
+                                <rect key="frame" x="0.0" y="50" width="375" height="548"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="neP-Fv-5E9" customClass="HelpTableViewCell" customModule="FinancialCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="neP-Fv-5E9" id="jDW-aY-4Pm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formula name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-kB-YM0">
+                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Vpw-B4-WCL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formula" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwE-Dv-gJY">
+                                                    <rect key="frame" x="15" y="41" width="345" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JwE-Dv-gJY" firstAttribute="leading" secondItem="jDW-aY-4Pm" secondAttribute="leading" constant="15" id="Buv-mc-G3J"/>
+                                                <constraint firstItem="eGP-kB-YM0" firstAttribute="top" secondItem="jDW-aY-4Pm" secondAttribute="topMargin" id="Cij-N9-Xs3"/>
+                                                <constraint firstItem="eGP-kB-YM0" firstAttribute="trailing" secondItem="jDW-aY-4Pm" secondAttribute="trailingMargin" id="Xsa-uq-ohW"/>
+                                                <constraint firstAttribute="trailing" secondItem="JwE-Dv-gJY" secondAttribute="trailing" constant="15" id="bMg-dj-jy4"/>
+                                                <constraint firstItem="eGP-kB-YM0" firstAttribute="leading" secondItem="jDW-aY-4Pm" secondAttribute="leadingMargin" id="cG4-Wi-4Ld"/>
+                                                <constraint firstAttribute="bottom" secondItem="JwE-Dv-gJY" secondAttribute="bottom" id="eKE-ep-UnF"/>
+                                                <constraint firstItem="JwE-Dv-gJY" firstAttribute="top" secondItem="eGP-kB-YM0" secondAttribute="bottom" constant="8" id="rNq-h8-c8m"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="formulaLabel" destination="JwE-Dv-gJY" id="ctH-h3-RZC"/>
+                                            <outlet property="formulaNameLablel" destination="eGP-kB-YM0" id="j5b-Ut-Dhm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="T6V-6N-kPa" id="Eq6-Ir-4z8"/>
+                                    <outlet property="delegate" destination="T6V-6N-kPa" id="GqM-2o-R2w"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rU4-Vg-Mb0" firstAttribute="leading" secondItem="0MP-jC-72v" secondAttribute="leading" id="Al4-J5-YAY"/>
                             <constraint firstItem="rU4-Vg-Mb0" firstAttribute="top" secondItem="0MP-jC-72v" secondAttribute="top" id="ISX-k0-TNQ"/>
+                            <constraint firstItem="0MP-jC-72v" firstAttribute="bottom" secondItem="uO1-sQ-7PL" secondAttribute="bottom" id="Tl4-zO-Fqx"/>
                             <constraint firstItem="rU4-Vg-Mb0" firstAttribute="trailing" secondItem="0MP-jC-72v" secondAttribute="trailing" id="UXh-uc-ghR"/>
+                            <constraint firstItem="0MP-jC-72v" firstAttribute="trailing" secondItem="uO1-sQ-7PL" secondAttribute="trailing" id="YZs-ae-ht2"/>
+                            <constraint firstItem="uO1-sQ-7PL" firstAttribute="top" secondItem="rU4-Vg-Mb0" secondAttribute="bottom" id="qxD-dj-mlL"/>
+                            <constraint firstItem="uO1-sQ-7PL" firstAttribute="leading" secondItem="0MP-jC-72v" secondAttribute="leading" id="zun-BY-xZI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0MP-jC-72v"/>
                     </view>
@@ -705,7 +757,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYr-R1-23e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5932" y="927"/>
+            <point key="canvasLocation" x="5932" y="926.98650674662679"/>
         </scene>
         <!--Mortgage-->
         <scene sceneID="vJr-c4-gRk">

@@ -37,6 +37,9 @@
 		3AED272C240A69D70001FA55 /* SavingsInterestRateValViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED272B240A69D70001FA55 /* SavingsInterestRateValViewController.swift */; };
 		3AED272E240A95DF0001FA55 /* SavingsPresentValViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED272D240A95DF0001FA55 /* SavingsPresentValViewController.swift */; };
 		3AED2730240AA22D0001FA55 /* SavingsTimesValViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED272F240AA22D0001FA55 /* SavingsTimesValViewController.swift */; };
+		3AED2732240B8EA40001FA55 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED2731240B8EA40001FA55 /* HelpViewController.swift */; };
+		3AED2734240B8F850001FA55 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED2733240B8F850001FA55 /* Formula.swift */; };
+		3AED2736240B98560001FA55 /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED2735240B98560001FA55 /* HelpTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		3AED272B240A69D70001FA55 /* SavingsInterestRateValViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsInterestRateValViewController.swift; sourceTree = "<group>"; };
 		3AED272D240A95DF0001FA55 /* SavingsPresentValViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsPresentValViewController.swift; sourceTree = "<group>"; };
 		3AED272F240AA22D0001FA55 /* SavingsTimesValViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTimesValViewController.swift; sourceTree = "<group>"; };
+		3AED2731240B8EA40001FA55 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		3AED2733240B8F850001FA55 /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		3AED2735240B98560001FA55 /* HelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 				3A91CF4023EF48E000D1AB52 /* StartViewController.swift */,
 				3A97598223F184990018A929 /* HistoryViewController.swift */,
 				3A2EA7D924025FCB009FD03E /* SavingsViewController.swift */,
+				3AED2731240B8EA40001FA55 /* HelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 			children = (
 				3AE8438D2406A7BF001B91AB /* Selection.swift */,
 				3AE8438F2406A9CB001B91AB /* SelectionsCollectionViewCell.swift */,
+				3AED2733240B8F850001FA55 /* Formula.swift */,
+				3AED2735240B98560001FA55 /* HelpTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,7 +376,9 @@
 			files = (
 				3AE8438E2406A7BF001B91AB /* Selection.swift in Sources */,
 				3A2EA7DA24025FCB009FD03E /* SavingsViewController.swift in Sources */,
+				3AED2736240B98560001FA55 /* HelpTableViewCell.swift in Sources */,
 				3A56AB8B240954CE00C7F0DE /* CompoundFutureValViewController.swift in Sources */,
+				3AED2732240B8EA40001FA55 /* HelpViewController.swift in Sources */,
 				3A91CF3623EEB53D00D1AB52 /* KeyboardViewController.swift in Sources */,
 				3A56AB8D240A315300C7F0DE /* CompoundPresentValViewController.swift in Sources */,
 				3A91CF4123EF48E000D1AB52 /* StartViewController.swift in Sources */,
@@ -381,6 +392,7 @@
 				3A56AB93240A3B9A00C7F0DE /* CompoundPaymentValViewController.swift in Sources */,
 				3A97597F23F036C20018A929 /* MortgageViewController.swift in Sources */,
 				3A91CF3C23EEBCFD00D1AB52 /* CompoundViewController.swift in Sources */,
+				3AED2734240B8F850001FA55 /* Formula.swift in Sources */,
 				3AED272A240A68F20001FA55 /* SavingsFutureValViewController.swift in Sources */,
 				3A56AB852407B5DF00C7F0DE /* MortgageSelectionViewController.swift in Sources */,
 				3AE843902406A9CB001B91AB /* SelectionsCollectionViewCell.swift in Sources */,

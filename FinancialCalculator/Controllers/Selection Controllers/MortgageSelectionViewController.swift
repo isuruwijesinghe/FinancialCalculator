@@ -10,7 +10,7 @@ import UIKit
 
 class MortgageSelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var selections = ["Payment", "Interest"]
+    var selections = ["Payment", "Present Value"]
     var selected : String? = "Payment"
     @IBOutlet weak var mortgagePickerView: UIPickerView!
     @IBOutlet weak var buttonConfirmCalculation: UIButton!
@@ -50,7 +50,12 @@ class MortgageSelectionViewController: UIViewController, UIPickerViewDelegate, U
     
     @IBAction func calculationButtonPressed(_ sender: UIButton) {
         
-        if selected == "Payment"{
+        switch selected {
+        case "Payment":
+            self.performSegue(withIdentifier: "mortgagePaymentSegue", sender: self)
+        case "Present Value":
+            self.performSegue(withIdentifier: "mortgagePresentValSegue", sender: self)
+        default:
             self.performSegue(withIdentifier: "mortgagePaymentSegue", sender: self)
         }
         

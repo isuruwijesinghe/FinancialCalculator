@@ -46,6 +46,8 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         let font:UIFont? = UIFont(name: "Helvetica", size:16)
         let fontSuper:UIFont? = UIFont(name: "Helvetica", size:10)
         
+        // MARK: - Compound Interest Savings
+        
         let c_FValue:NSMutableAttributedString = NSMutableAttributedString(string: "A = P(1 + (R / n)(nt)", attributes: [.font:font!])
         c_FValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:17,length:4))
         
@@ -58,19 +60,32 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         let c_TValue:NSMutableAttributedString = NSMutableAttributedString(string: "t = log(A / P) / n[log(1 + R / n)]", attributes: [.font:font!])
         c_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
         
-        formulas.append(Formula.init(type: "Compound Interest Savings", formulaName: ["Future Value", "Principal Value", "Interest Rate", "No . of Times"], formulas: [c_FValue, c_PValue, c_RValue, c_TValue]))
+        let c_EPMTValue:NSMutableAttributedString = NSMutableAttributedString(string: "PMT = (AR) / ((1 + R) t - 1)(1 + R * 0)", attributes: [.font:font!])
+        c_EPMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:21,length:2))
+        
+        let c_BPMTValue:NSMutableAttributedString = NSMutableAttributedString(string: "PMT = (AR) / ((1 + R) t - 1)(1 + R * 1)", attributes: [.font:font!])
+        c_BPMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:21,length:2))
+        
+        formulas.append(Formula.init(type: "Compound Interest Savings", formulaName: ["Future Value", "Principal Value", "Interest Rate", "No . of Times", "End Payment", "Begin Payment"], formulas: [c_FValue, c_PValue, c_RValue, c_TValue, c_EPMTValue, c_BPMTValue]))
+        
+        // MARK: - Simple Savngs
+        
+        let s_FValue:NSMutableAttributedString = NSMutableAttributedString(string: "A = P(1 + Rt)", attributes: [.font:font!])
+        s_FValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        let s_PValue:NSMutableAttributedString = NSMutableAttributedString(string: "P = A / (1 + Rt)", attributes: [.font:font!])
+        s_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        let s_RValue:NSMutableAttributedString = NSMutableAttributedString(string: "R = (1/t)(A/P - 1)", attributes: [.font:font!])
+        s_RValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        let s_TValue:NSMutableAttributedString = NSMutableAttributedString(string: "t = (R/r)(A/P - 1)", attributes: [.font:font!])
+        s_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        formulas.append(Formula.init(type: "Simple Savings", formulaName: ["Future Value", "Principal Value", "Interest Rate", "No . of Times"], formulas: [s_FValue, s_PValue, s_RValue, s_TValue]))
+        
+        // MARK: - Mortgage
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

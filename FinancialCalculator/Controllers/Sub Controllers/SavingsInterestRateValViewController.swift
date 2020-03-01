@@ -14,7 +14,7 @@ class SavingsInterestRateValViewController: ParentViewController {
     @IBOutlet weak var tf_PresentValue: UITextField!
     @IBOutlet weak var tf_Interest: UITextField!
     @IBOutlet weak var tf_NoOfPayments: UITextField!
-    @IBOutlet weak var tf_InterestAmount: UITextField!
+    @IBOutlet weak var tf_FutureValue: UITextField!
     var unit: String = "none"
     
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class SavingsInterestRateValViewController: ParentViewController {
             selectedText = tf_PresentValue
             unit = "present"
             
-        }else if (tf_InterestAmount.isFirstResponder){
-            selectedText = tf_InterestAmount
-            unit = "interest_amount"
+        }else if (tf_FutureValue.isFirstResponder){
+            selectedText = tf_FutureValue
+            unit = "future"
             
         }else if (tf_Interest.isFirstResponder){
             selectedText = tf_Interest
@@ -97,14 +97,14 @@ class SavingsInterestRateValViewController: ParentViewController {
     // method to calculate and update the text fields
     func updateFields(){
         
-        if (tf_PresentValue.text != "0" && tf_InterestAmount.text != "0"  && tf_NoOfPayments.text != "0" ) {
+        if (tf_PresentValue.text != "0" && tf_FutureValue.text != "0"  && tf_NoOfPayments.text != "0" ) {
             
             //get values update present value
-            let interest_amount = (tf_InterestAmount.text! as NSString).doubleValue
+            let futureValue = (tf_FutureValue.text! as NSString).doubleValue
             let noOfPayments = (tf_NoOfPayments.text! as NSString).doubleValue
             let presentValue = (tf_PresentValue.text! as NSString).doubleValue
             
-            let value: Double = Calculations.calSavingsInterestRate(I: interest_amount, P: presentValue, t: noOfPayments)
+            let value: Double = Calculations.calSavingsInterestRate(A: futureValue, P: presentValue, t: noOfPayments)
             
             //convert interest to decimal
             let interest = value * 100
@@ -161,14 +161,14 @@ class SavingsInterestRateValViewController: ParentViewController {
     
     // creating saving value as a string
     func savingItem() -> String{
-        return "Principal value = Rs. " + String(format: "%.2f", Double(tf_PresentValue.text!)!) + ", Interest value = Rs. " + String(format: "%.2f", Double(tf_InterestAmount.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of payments (years) = " + String(format: "%.2f", Double(tf_NoOfPayments.text!)!)
+        return "Principal value = Rs. " + String(format: "%.2f", Double(tf_PresentValue.text!)!) + ", Future value = Rs. " + String(format: "%.2f", Double(tf_FutureValue.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of payments (years) = " + String(format: "%.2f", Double(tf_NoOfPayments.text!)!)
     }
     
     //save text field data when app is closing
     func saveTfDataAppClose(){
         let defaults = UserDefaults.standard
         defaults.set(tf_PresentValue.text, forKey: "savings_presentValue")
-        defaults.set(tf_InterestAmount.text, forKey: "savings_interest_amount")
+        defaults.set(tf_FutureValue.text, forKey: "savings_futureValue")
         defaults.set(tf_Interest.text, forKey: "savings_interest")
         defaults.set(tf_NoOfPayments.text, forKey: "savings_noOfMonths")
         defaults.synchronize()
@@ -178,7 +178,7 @@ class SavingsInterestRateValViewController: ParentViewController {
     func getDataWhenReopen(){
         let defaults = UserDefaults.standard
         tf_PresentValue.text = defaults.string(forKey: "savings_presentValue")
-        tf_InterestAmount.text = defaults.string(forKey: "savings_interest_amount")
+        tf_FutureValue.text = defaults.string(forKey: "savings_futureValue")
         tf_Interest.text = defaults.string(forKey: "savings_interest")
         tf_NoOfPayments.text = defaults.string(forKey: "savings_noOfMonths")
         
@@ -198,7 +198,7 @@ class SavingsInterestRateValViewController: ParentViewController {
     // clear all text fields
     func clearTextFields(){
         tf_PresentValue.text = "0"
-        tf_InterestAmount.text = "0"
+        tf_FutureValue.text = "0"
         tf_Interest.text = "0"
         tf_NoOfPayments.text = "0"
         
@@ -212,7 +212,7 @@ class SavingsInterestRateValViewController: ParentViewController {
     // disable soft keyboard
     func disableKeyBoards(){
         tf_PresentValue.inputView = UIView()
-        tf_InterestAmount.inputView = UIView()
+        tf_FutureValue.inputView = UIView()
         tf_Interest.inputView = UIView()
         tf_NoOfPayments.inputView = UIView()
     }

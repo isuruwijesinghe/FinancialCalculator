@@ -28,80 +28,81 @@ class MortgageViewController: ParentViewController {
         saveTfDataAppClose()
     }
     
-     //get inputs from custom keyboard
+    //get inputs from custom keyboard
     override func keyboardKeyPressed(value: String) {
-            var selectedText: UITextField? = nil
-            var unit: String = "none"
+        var selectedText: UITextField? = nil
+        var unit: String = "none"
+        
+        if (tf_LoanAmount.isFirstResponder) {
+            selectedText = tf_LoanAmount
+            unit = "present"
             
-            if (tf_LoanAmount.isFirstResponder) {
-                selectedText = tf_LoanAmount
-                unit = "present"
-                
-            }else if (tf_Interest.isFirstResponder){
-                selectedText = tf_Interest
-                unit = "interest"
-                
-            }else if (tf_Payment.isFirstResponder){
-                selectedText = tf_Payment
-                unit = "payment"
-                
-            }else if (tf_NoOfMonths.isFirstResponder){
-                selectedText = tf_NoOfMonths
-                unit = "noOfPayments"
-                
-            }else{
-                unit = "none"
-            }
+        }else if (tf_Interest.isFirstResponder){
+            selectedText = tf_Interest
+            unit = "interest"
             
-            if(unit != "none"){
-                
-                if(value != "DEL"){
-                    // Check if decimal place is already there
-                     if(!(value == "." && (selectedText?.text?.contains("."))!))
-                         {
-                            selectedText?.text = ((selectedText?.text!)!) + value
-                                       
-                                if(selectedText?.text?.first == "0") {
-                                        selectedText?.text=String((selectedText?.text?.dropFirst())!)
-                                       }
-                            
-                                    updateFields()
-                            }
-                }else{
-                    selectedText?.text = String((selectedText?.text?.dropLast())!)
+        }else if (tf_Payment.isFirstResponder){
+            selectedText = tf_Payment
+            unit = "payment"
+            
+        }else if (tf_NoOfMonths.isFirstResponder){
+            selectedText = tf_NoOfMonths
+            unit = "noOfPayments"
+            
+        }else{
+            unit = "none"
+        }
+        
+        if(unit != "none"){
+            
+            if(value != "DEL"){
+                // Check if decimal place is already there
+                if(!(value == "." && (selectedText?.text?.contains("."))!))
+                {
+                    selectedText?.text = ((selectedText?.text!)!) + value
                     
-                    if((selectedText?.text?.count)! > 0) {
-                        updateFields()
-                    } else {
-                        
-                        let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
-                            self.clearTextFields()
-                        }))
-                        
-                        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil ))
-                        
-                        self.present(alert, animated: true, completion: nil)
-                        
+                    if(selectedText?.text?.first == "0") {
+                        selectedText?.text=String((selectedText?.text?.dropFirst())!)
                     }
+                    
+                    updateFields()
+                }
+            }else{
+                selectedText?.text = String((selectedText?.text?.dropLast())!)
+                
+                if((selectedText?.text?.count)! > 0) {
+                    updateFields()
+                } else {
+                    
+                    let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+                        self.clearTextFields()
+                    }))
+                    
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil ))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
             }
         }
+    }
     
     // method to calculate and update the text fields
     func updateFields(){
-           
-           if (tf_LoanAmount.text != "0" && tf_Interest.text != "0"  && tf_NoOfMonths.text != "0") {
+        
+        if (tf_LoanAmount.text != "0" && tf_Interest.text != "0"  && tf_NoOfMonths.text != "0") {
             
             //update compounds Per Year
             let presentValue = (tf_LoanAmount.text! as NSString).doubleValue
             var interest = (tf_Interest.text! as NSString).doubleValue
             //convert interest to decimal
             interest = interest / 100
-//            let payment = (tf_Payment.text! as NSString).doubleValue
+            //            let payment = (tf_Payment.text! as NSString).doubleValue
             let noOfPayments = (tf_NoOfMonths.text! as NSString).doubleValue
+            let compoundsPerYear = 12.00 //compounds per year is 12 by default cuz year has 12 months
             
-            let value : Double = Calculations.calPMTValue(P: presentValue, R: interest, n: noOfPayments)
+            let value : Double = Calculations.calPMTValue(P: presentValue, R: interest, n: noOfPayments, t: compoundsPerYear)
             
             tf_Payment.text = String(format:"%.2f", value)
             
@@ -138,22 +139,22 @@ class MortgageViewController: ParentViewController {
     @IBAction func HistoryBtnPressed(_ sender: UIBarButtonItem) {
         
         let storage = Storage.getData(key: "mortgage")
-               if(storage.count > 0){
-                // History page list code here
-                   let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
-                   destination.storage = storage
-                   self.present(destination, animated: true, completion: nil)
-               }else{
-                   let alert = UIAlertController(title: "Error Alert", message: "No history found !", preferredStyle: UIAlertController.Style.alert)
-                   alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                   self.present(alert, animated: true, completion: nil)
-               }
-               
+        if(storage.count > 0){
+            // History page list code here
+            let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
+            destination.storage = storage
+            self.present(destination, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Error Alert", message: "No history found !", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     // creating saving value as a printable string
     func savingItem() -> String{
-        return "Loan value = Rs. " + String(format: "%.2f", Double(tf_LoanAmount.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of months = " + String(format: "%.0f", Double(tf_NoOfMonths.text!)!)  + ", Payment = Rs. " + String(format: "%.2f", Double(tf_Payment.text!)!)
+        return "Loan value = Rs. " + String(format: "%.2f", Double(tf_LoanAmount.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of years = " + String(format: "%.0f", Double(tf_NoOfMonths.text!)!)  + ", Payment = Rs. " + String(format: "%.2f", Double(tf_Payment.text!)!)
     }
     
     //save text field data when app is closing
@@ -184,7 +185,7 @@ class MortgageViewController: ParentViewController {
             tf_Payment.layer.borderColor = greenTFColor.cgColor
             tf_Payment.layer.borderWidth = 1.0
         }
-
+        
     }
     
     // clear all text fields

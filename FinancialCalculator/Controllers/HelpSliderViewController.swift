@@ -20,36 +20,41 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
     
     var helpArray = [Dictionary<String,String>]()
     
-    
+    var vcOne : Bool = true
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.delegate = self
-                
-        helpArray = [help1,help2,help3,help4]
-
         
-        scrollView.isPagingEnabled = true
-        scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(helpArray.count), height: 520)
-        scrollView.showsHorizontalScrollIndicator = false
-        
-        loadViews()
-        // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        print(" it comes here --> fucker")
-
-        if segue.identifier == "calculateSegue" {
+        if(vcOne)
+        {
+            helpArray = [help1,help2,help3,help4]
+            scrollView.isPagingEnabled = true
+            scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(helpArray.count), height: 520)
+            scrollView.showsHorizontalScrollIndicator = false
             
-            print(" it comes here -->")
-            // .. do somtheing
-        } else if segue.identifier == "historySegue" {
-            // .. do something
-            print(" it comes here -->2")
-
+            pageControl.numberOfPages = helpArray.count
+            loadViews()
+            
         }
+        else
+        {
+            helpArray = [help1,help2]
+            scrollView.isPagingEnabled = true
+            scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(helpArray.count), height: 520)
+            scrollView.showsHorizontalScrollIndicator = false
+            
+            pageControl.numberOfPages = helpArray.count
+            loadViews()
+        }
+
+
     }
     
     func loadViews(){
@@ -79,5 +84,7 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
    
 }

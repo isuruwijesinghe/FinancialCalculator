@@ -31,6 +31,7 @@
 		3A97597F23F036C20018A929 /* MortgagePaymentValViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97597E23F036C20018A929 /* MortgagePaymentValViewController.swift */; };
 		3A97598123F171B50018A929 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97598023F171B50018A929 /* Storage.swift */; };
 		3A97598323F184990018A929 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97598223F184990018A929 /* HistoryViewController.swift */; };
+		3AE29B962410EEF900949A81 /* HelpSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE29B952410EEF900949A81 /* HelpSelectionViewController.swift */; };
 		3AE8438E2406A7BF001B91AB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8438D2406A7BF001B91AB /* Selection.swift */; };
 		3AE843902406A9CB001B91AB /* SelectionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8438F2406A9CB001B91AB /* SelectionsCollectionViewCell.swift */; };
 		3AED2728240A564B0001FA55 /* SavingsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED2727240A564B0001FA55 /* SavingsSelectionViewController.swift */; };
@@ -92,6 +93,7 @@
 		3A97597E23F036C20018A929 /* MortgagePaymentValViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgagePaymentValViewController.swift; sourceTree = "<group>"; };
 		3A97598023F171B50018A929 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		3A97598223F184990018A929 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		3AE29B952410EEF900949A81 /* HelpSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectionViewController.swift; sourceTree = "<group>"; };
 		3AE8438D2406A7BF001B91AB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		3AE8438F2406A9CB001B91AB /* SelectionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AED2727240A564B0001FA55 /* SavingsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsSelectionViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		3A56AB872408D47F00C7F0DE /* Selection Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3AE29B952410EEF900949A81 /* HelpSelectionViewController.swift */,
 				3A56AB842407B5DF00C7F0DE /* MortgageSelectionViewController.swift */,
 				3A56AB882408EC9B00C7F0DE /* CompoundSelectionViewController.swift */,
 				3AED2727240A564B0001FA55 /* SavingsSelectionViewController.swift */,
@@ -403,6 +406,7 @@
 				3AED272A240A68F20001FA55 /* SavingsFutureValViewController.swift in Sources */,
 				3A56AB852407B5DF00C7F0DE /* MortgageSelectionViewController.swift in Sources */,
 				3AE843902406A9CB001B91AB /* SelectionsCollectionViewCell.swift in Sources */,
+				3AE29B962410EEF900949A81 /* HelpSelectionViewController.swift in Sources */,
 				3A56AB8F240A332F00C7F0DE /* CompoundInterestValViewController.swift in Sources */,
 				3AED2730240AA22D0001FA55 /* SavingsTimesValViewController.swift in Sources */,
 				3A91CF3F23EED7D800D1AB52 /* Calculations.swift in Sources */,

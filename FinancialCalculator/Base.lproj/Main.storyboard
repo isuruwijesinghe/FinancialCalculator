@@ -758,12 +758,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYr-R1-23e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5932" y="926.98650674662679"/>
+            <point key="canvasLocation" x="6807" y="1987"/>
         </scene>
         <!--Help-->
         <scene sceneID="HVJ-0q-TdV">
             <objects>
-                <viewController id="FH0-aK-95b" sceneMemberID="viewController">
+                <viewController id="FH0-aK-95b" customClass="HelpSelectionViewController" customModule="FinancialCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iVA-om-7H1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -963,7 +963,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEY-FI-w4j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7639.1999999999998" y="927.88605697151434"/>
+            <point key="canvasLocation" x="7623" y="1987"/>
         </scene>
         <!--Mortgage-->
         <scene sceneID="vJr-c4-gRk">
@@ -1049,7 +1049,6 @@
                         <segue destination="5aC-8p-bek" kind="relationship" relationship="viewControllers" id="NIL-Dh-D8Z"/>
                         <segue destination="HAj-kH-LlN" kind="relationship" relationship="viewControllers" id="gf0-S6-JoN"/>
                         <segue destination="sAq-4Z-QfR" kind="relationship" relationship="viewControllers" id="qSc-TN-qvV"/>
-                        <segue destination="T6V-6N-kPa" kind="relationship" relationship="viewControllers" id="MJF-nT-Arw"/>
                         <segue destination="FH0-aK-95b" kind="relationship" relationship="viewControllers" id="MrX-DJ-zha"/>
                     </connections>
                 </tabBarController>
@@ -2375,6 +2374,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="bAg-zx-SYF"/>
         <segue reference="wPJ-k0-0bF"/>
-        <segue reference="7aa-9R-xJN"/>
     </inferredMetricsTieBreakers>
 </document>

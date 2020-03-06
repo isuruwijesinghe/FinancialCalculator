@@ -90,10 +90,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HVQ-5g-siG"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBP-8M-zl9">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="U70-L8-Yzu"/>
+                                    <constraint firstAttribute="height" constant="50" id="xqZ-e8-nK4"/>
+                                </constraints>
+                                <state key="normal" image="help_white"/>
+                                <connections>
+                                    <segue destination="FH0-aK-95b" kind="show" id="W61-lJ-lME"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980390000001" green="0.1843137255" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WBP-8M-zl9" secondAttribute="trailing" constant="20" id="Bjp-uT-a3Z"/>
                             <constraint firstItem="m1e-zT-cLf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GVJ-Vd-UvT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBP-8M-zl9" secondAttribute="bottom" constant="20" id="HiO-P7-BFx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m1e-zT-cLf" secondAttribute="trailing" constant="20" id="Poa-Mh-OPu"/>
                             <constraint firstItem="m1e-zT-cLf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pBA-WZ-aQs"/>
                         </constraints>
@@ -817,7 +830,14 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Help" id="auG-Mw-SL4"/>
+                                    <navigationItem title="Help" id="auG-Mw-SL4">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="OqR-t7-m4a">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="BackBtnPressed:" destination="FH0-aK-95b" id="Ypu-u4-gK4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here some common questions," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUu-az-3A7">
@@ -895,10 +915,11 @@
                         <viewLayoutGuide key="safeArea" id="3v0-HI-jvt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="help" id="WnO-w1-6gk"/>
+                    <navigationItem key="navigationItem" id="7Ri-co-76a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX6-Rg-QlX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6762.3999999999996" y="924.28785607196414"/>
+            <point key="canvasLocation" x="7138" y="927"/>
         </scene>
         <!--Help Slider View Controller-->
         <scene sceneID="1C4-mk-v60">
@@ -2365,6 +2386,7 @@
     </scenes>
     <resources>
         <image name="help" width="32" height="32"/>
+        <image name="help_white" width="64" height="64"/>
         <image name="history" width="25" height="25"/>
         <image name="mortage" width="32" height="32"/>
         <image name="pigBank" width="32" height="32"/>
@@ -2372,7 +2394,8 @@
         <image name="savings" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bAg-zx-SYF"/>
+        <segue reference="q4d-VU-1x0"/>
         <segue reference="wPJ-k0-0bF"/>
+        <segue reference="W61-lJ-lME"/>
     </inferredMetricsTieBreakers>
 </document>

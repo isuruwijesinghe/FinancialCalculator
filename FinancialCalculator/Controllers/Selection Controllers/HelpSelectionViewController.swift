@@ -29,6 +29,10 @@ class HelpSelectionViewController: UIViewController {
             mainVC.vcOne = false
         }
     }
+    
+    @IBAction func BackBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

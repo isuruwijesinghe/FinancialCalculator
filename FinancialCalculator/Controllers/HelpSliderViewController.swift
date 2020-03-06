@@ -17,6 +17,9 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
     let help2 = ["text":"Now select the type of the calculation you want.", "image":"2_new"]
     let help3 = ["text":"Now fill the empty fields except the red highlighted one.", "image":"3"]
     let help4 = ["text":"After you fill the empty fields, you will get the answer and the red field will be green.", "image":"4"]
+    let help5 = ["text":"Click on the save buton to save the calculations.", "image":"5"]
+    let help6 = ["text":"Click on History button to view the saved calculations.", "image":"6"]
+    let help7 = ["text":"You will get history view like this.", "image":"7"]
     
     var helpArray = [Dictionary<String,String>]()
     
@@ -45,7 +48,7 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
         }
         else
         {
-            helpArray = [help1,help2]
+            helpArray = [help5,help6,help7]
             scrollView.isPagingEnabled = true
             scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(helpArray.count), height: 520)
             scrollView.showsHorizontalScrollIndicator = false

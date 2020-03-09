@@ -1,14 +1,14 @@
 //
-//  MortgagePresentValViewController.swift
+//  MortgageInterestViewController.swift
 //  FinancialCalculator
 //
-//  Created by Isuru Wijesinghe on 3/1/20.
+//  Created by Isuru Wijesinghe on 3/9/20.
 //  Copyright © 2020 Isuru Wijesinghe. All rights reserved.
 //
 
 import UIKit
 
-class MortgagePresentValViewController: ParentViewController {
+class MortgageInterestViewController: ParentViewController {
 
     @IBOutlet weak var tf_LoanAmount: UITextField!
     @IBOutlet weak var tf_Interest: UITextField!
@@ -90,31 +90,35 @@ class MortgagePresentValViewController: ParentViewController {
     // method to calculate and update the text fields
     func updateFields(){
         
-        if (tf_Payment.text != "0" && tf_Interest.text != "0"  && tf_NoOfMonths.text != "0") {
+        if (tf_Payment.text != "0" && tf_LoanAmount.text != "0"  && tf_NoOfMonths.text != "0") {
             
             //update compounds Per Year
             let payment = (tf_Payment.text! as NSString).doubleValue
-            var interest = (tf_Interest.text! as NSString).doubleValue
+            let loan = (tf_LoanAmount.text! as NSString).doubleValue
+//            var interest = (tf_Interest.text! as NSString).doubleValue
             //convert interest to decimal
-            interest = interest / 100
-            //            let payment = (tf_Payment.text! as NSString).doubleValue
+//            interest = interest / 100
             let noOfPayments = (tf_NoOfMonths.text! as NSString).doubleValue
-            let compoundsPerYear = 12.00 //compounds per year is 12 by default cuz year has 12 months
+//            let compoundsPerYear = 12.00 //compounds per year is 12 by default cuz year has 12 months
             
-            let value : Double = Calculations.calMortgagePresentValue(PMT: payment, R: interest, n: noOfPayments, t: compoundsPerYear)
+            let value : Double = Calculations.calMortgageInterestValue(P: loan, PMT: payment, n: noOfPayments)
             
-            tf_LoanAmount.text = String(format:"%.2f", value)
+            tf_Interest.text = String(format:"%.2f", value)
             
             let redTFColor = UIColor.red
             let greenTFColor = UIColor.green
             
-            if tf_LoanAmount.text == "0" {
-                tf_LoanAmount.layer.borderColor = redTFColor.cgColor
-                tf_LoanAmount.layer.borderWidth = 1.0
+            if tf_Interest.text == "0" {
+                tf_Interest.layer.borderColor = redTFColor.cgColor
+                tf_Interest.layer.borderWidth = 1.0
             } else{
-                tf_LoanAmount.layer.borderColor = greenTFColor.cgColor
-                tf_LoanAmount.layer.borderWidth = 1.0
+                tf_Interest.layer.borderColor = greenTFColor.cgColor
+                tf_Interest.layer.borderWidth = 1.0
             }
+            
+            //            save user entered text field values
+            saveTfDataAppClose()
+            
         }
         
     }
@@ -177,12 +181,12 @@ class MortgagePresentValViewController: ParentViewController {
         let redTFColor = UIColor.red
         let greenTFColor = UIColor.green
         
-        if tf_LoanAmount.text == "0" {
-            tf_LoanAmount.layer.borderColor = redTFColor.cgColor
-            tf_LoanAmount.layer.borderWidth = 1.0
+        if tf_Interest.text == "0" {
+            tf_Interest.layer.borderColor = redTFColor.cgColor
+            tf_Interest.layer.borderWidth = 1.0
         } else{
-            tf_LoanAmount.layer.borderColor = greenTFColor.cgColor
-            tf_LoanAmount.layer.borderWidth = 1.0
+            tf_Interest.layer.borderColor = greenTFColor.cgColor
+            tf_Interest.layer.borderWidth = 1.0
         }
         
     }
@@ -196,9 +200,9 @@ class MortgagePresentValViewController: ParentViewController {
         
         let redTFColor = UIColor.red
         
-        if tf_LoanAmount.text == "0" {
-            tf_LoanAmount.layer.borderColor = redTFColor.cgColor
-            tf_LoanAmount.layer.borderWidth = 1.0
+        if tf_Interest.text == "0" {
+            tf_Interest.layer.borderColor = redTFColor.cgColor
+            tf_Interest.layer.borderWidth = 1.0
         }
     }
     
@@ -215,7 +219,6 @@ class MortgagePresentValViewController: ParentViewController {
     }
     
     
-
     /*
     // MARK: - Navigation
 

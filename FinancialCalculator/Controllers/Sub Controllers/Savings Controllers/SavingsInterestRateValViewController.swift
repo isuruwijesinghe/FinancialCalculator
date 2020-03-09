@@ -121,7 +121,8 @@ class SavingsInterestRateValViewController: ParentViewController {
                 tf_Interest.layer.borderColor = greenTFColor.cgColor
                 tf_Interest.layer.borderWidth = 1.0
             }
-            
+            //            save user entered text field values
+            saveTfDataAppClose()
             
         }
         

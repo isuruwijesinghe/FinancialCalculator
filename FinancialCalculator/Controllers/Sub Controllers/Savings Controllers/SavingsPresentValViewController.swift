@@ -121,6 +121,8 @@ class SavingsPresentValViewController: ParentViewController {
                 tf_PresentValue.layer.borderWidth = 1.0
             }
             
+            //            save user entered text field values
+            saveTfDataAppClose()
             
         }
         

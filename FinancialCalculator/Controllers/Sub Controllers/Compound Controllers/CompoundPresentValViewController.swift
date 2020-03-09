@@ -1,5 +1,5 @@
 //
-//  SavingsTimesValViewController.swift
+//  CompoundPresentValViewController.swift
 //  FinancialCalculator
 //
 //  Created by Isuru Wijesinghe on 2/29/20.
@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SavingsTimesValViewController: ParentViewController {
+class CompoundPresentValViewController: ParentViewController {
 
     @IBOutlet weak var tf_PresentValue: UITextField!
-    @IBOutlet weak var tf_Interest: UITextField!
-    @IBOutlet weak var tf_NoOfPayments: UITextField!
     @IBOutlet weak var tf_FutureValue: UITextField!
+    @IBOutlet weak var tf_Interest: UITextField!
+    //    @IBOutlet weak var tf_Payment: UITextField!
+    @IBOutlet weak var tf_NoOfPayments: UITextField!
+    @IBOutlet weak var tf_CompoundsPerYear: UITextField!
+    //    @IBOutlet weak var BeginEndSwitch: UISwitch!
+    //    @IBOutlet weak var beginEndLabel: UILabel!
+    var switchValue : String = "End"
     var unit: String = "none"
     
     override func viewDidLoad() {
@@ -49,7 +54,12 @@ class SavingsTimesValViewController: ParentViewController {
             selectedText = tf_NoOfPayments
             unit = "noOfPayments"
             
-        }else{
+        }else if (tf_CompoundsPerYear.isFirstResponder){
+            selectedText = tf_CompoundsPerYear
+            unit = "compoundsPerYear"
+            
+        }
+        else{
             unit = "none"
         }
         
@@ -96,32 +106,32 @@ class SavingsTimesValViewController: ParentViewController {
     // method to calculate and update the text fields
     func updateFields(){
         
-        if (tf_Interest.text != "0" && tf_FutureValue.text != "0"  && tf_PresentValue.text != "0" ) {
+        if(tf_FutureValue.text != "0" && tf_Interest.text != "0" && tf_NoOfPayments.text != "0" && tf_CompoundsPerYear.text != "0"){
             
-            //get values update present value
+            //update update the present value
             let futureValue = (tf_FutureValue.text! as NSString).doubleValue
-            let presentValue = (tf_PresentValue.text! as NSString).doubleValue
             var interest = (tf_Interest.text! as NSString).doubleValue
             //convert interest to decimal
             interest = interest / 100
+            let noOfPayments = (tf_NoOfPayments.text! as NSString).doubleValue
+            let compoundsPerYear = (tf_CompoundsPerYear.text! as NSString).doubleValue
             
+            let value: Double = Calculations.calPrincipalValue(A: futureValue, R: interest, n: compoundsPerYear, t: noOfPayments)
             
-            let value: Double = Calculations.calSavingsTime(A: futureValue, P: presentValue, R: interest)
-            
-            tf_NoOfPayments.text = String(format:"%.2f", value)
+            tf_PresentValue.text = String(format:"%.2f", value)
             
             let redTFColor = UIColor.red
             let greenTFColor = UIColor.green
             
-            if tf_NoOfPayments.text == "0" {
-                tf_NoOfPayments.layer.borderColor = redTFColor.cgColor
-                tf_NoOfPayments.layer.borderWidth = 1.0
+            if tf_PresentValue.text == "0" {
+                tf_PresentValue.layer.borderColor = redTFColor.cgColor
+                tf_PresentValue.layer.borderWidth = 1.0
             } else{
-                tf_NoOfPayments.layer.borderColor = greenTFColor.cgColor
-                tf_NoOfPayments.layer.borderWidth = 1.0
+                tf_PresentValue.layer.borderColor = greenTFColor.cgColor
+                tf_PresentValue.layer.borderWidth = 1.0
             }
-            
-            
+            //            save user entered text field values
+            saveTfDataAppClose()
         }
         
     }
@@ -130,8 +140,8 @@ class SavingsTimesValViewController: ParentViewController {
     @IBAction func SaveBtnPressed(_ sender: UIBarButtonItem) {
         var message = "Save Failed ! Please check the text fields."
         
-        if(tf_NoOfPayments.text != "0" && tf_PresentValue.text != "0"){
-            Storage.storeData(key: "savings", value: savingItem())
+        if(tf_PresentValue.text != "0" && tf_FutureValue.text != "0"){
+            Storage.storeData(key: "compound", value: savingItem())
             message = "Succssfully saved !"
         }
         
@@ -144,7 +154,7 @@ class SavingsTimesValViewController: ParentViewController {
     // history button action
     @IBAction func HistoryBtnPressed(_ sender: UIBarButtonItem) {
         
-        let storage = Storage.getData(key: "savings")
+        let storage = Storage.getData(key: "compound")
         if(storage.count > 0){
             // History page list code here
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
@@ -160,39 +170,43 @@ class SavingsTimesValViewController: ParentViewController {
     
     // creating saving value as a string
     func savingItem() -> String{
-        return "Principal value = Rs. " + String(format: "%.2f", Double(tf_PresentValue.text!)!) + ", Future value = Rs. " + String(format: "%.2f", Double(tf_FutureValue.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of payments (years) = " + String(format: "%.2f", Double(tf_NoOfPayments.text!)!)
+        return "Principal value = Rs. " + String(format: "%.2f", Double(tf_PresentValue.text!)!) + ", Future value = Rs. " + String(format: "%.2f", Double(tf_FutureValue.text!)!) + ", Interest = " + tf_Interest.text! + "%" + ", No. of payments = " + String(format: "%.0f", Double(tf_NoOfPayments.text!)!)  + ", Compounds per year = " + String(format: "%.0f", Double(tf_CompoundsPerYear.text!)!)
     }
     
     //save text field data when app is closing
     func saveTfDataAppClose(){
         let defaults = UserDefaults.standard
-        defaults.set(tf_PresentValue.text, forKey: "savings_presentValue")
-        defaults.set(tf_FutureValue.text, forKey: "savings_futureValue")
-        defaults.set(tf_Interest.text, forKey: "savings_interest")
-        defaults.set(tf_NoOfPayments.text, forKey: "savings_noOfMonths")
+        defaults.set(tf_PresentValue.text, forKey: "compound_presentValue")
+        defaults.set(tf_FutureValue.text, forKey: "compound_futureValue")
+        defaults.set(tf_Interest.text, forKey: "compound_interest")
+        defaults.set(tf_NoOfPayments.text, forKey: "compound_noOfMonths")
+        defaults.set(tf_CompoundsPerYear.text, forKey: "compound_compoundsPerYear")
         defaults.synchronize()
     }
     
     // load last added data to text field when app reopen
     func getDataWhenReopen(){
         let defaults = UserDefaults.standard
-        tf_PresentValue.text = defaults.string(forKey: "savings_presentValue")
-        tf_FutureValue.text = defaults.string(forKey: "savings_futureValue")
-        tf_Interest.text = defaults.string(forKey: "savings_interest")
-        tf_NoOfPayments.text = defaults.string(forKey: "savings_noOfMonths")
+        tf_PresentValue.text = defaults.string(forKey: "compound_presentValue")
+        tf_FutureValue.text = defaults.string(forKey: "compound_futureValue")
+        tf_Interest.text = defaults.string(forKey: "compound_interest")
+        tf_NoOfPayments.text = defaults.string(forKey: "compound_noOfMonths")
+        tf_CompoundsPerYear.text = defaults.string(forKey: "compound_compoundsPerYear")
         
         let redTFColor = UIColor.red
         let greenTFColor = UIColor.green
         
-        if tf_NoOfPayments.text == "0" {
-            tf_NoOfPayments.layer.borderColor = redTFColor.cgColor
-            tf_NoOfPayments.layer.borderWidth = 1.0
+        if tf_PresentValue.text == "0" {
+            tf_PresentValue.layer.borderColor = redTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         } else{
-            tf_NoOfPayments.layer.borderColor = greenTFColor.cgColor
-            tf_NoOfPayments.layer.borderWidth = 1.0
+            tf_PresentValue.layer.borderColor = greenTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         }
         
+        
     }
+    
     
     // clear all text fields
     func clearTextFields(){
@@ -200,11 +214,12 @@ class SavingsTimesValViewController: ParentViewController {
         tf_FutureValue.text = "0"
         tf_Interest.text = "0"
         tf_NoOfPayments.text = "0"
+        tf_CompoundsPerYear.text = "0"
         
         let redTFColor = UIColor.red
-        if tf_NoOfPayments.text == "0" {
-            tf_NoOfPayments.layer.borderColor = redTFColor.cgColor
-            tf_NoOfPayments.layer.borderWidth = 1.0
+        if tf_PresentValue.text == "0" {
+            tf_PresentValue.layer.borderColor = redTFColor.cgColor
+            tf_PresentValue.layer.borderWidth = 1.0
         }
     }
     
@@ -214,11 +229,13 @@ class SavingsTimesValViewController: ParentViewController {
         tf_FutureValue.inputView = UIView()
         tf_Interest.inputView = UIView()
         tf_NoOfPayments.inputView = UIView()
+        tf_CompoundsPerYear.inputView = UIView()
     }
     
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
 
     /*
     // MARK: - Navigation

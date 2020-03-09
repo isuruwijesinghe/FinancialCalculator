@@ -10,11 +10,11 @@ import UIKit
 
 class KeyboardViewController: UIViewController {
 
-//    @IBOutlet weak var btnNegate: UIButton!
+    @IBOutlet weak var btnNegate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        btnNegate.isHidden = false
+        btnNegate.isHidden = true
 
         // Do any additional setup after loading the view.
     }

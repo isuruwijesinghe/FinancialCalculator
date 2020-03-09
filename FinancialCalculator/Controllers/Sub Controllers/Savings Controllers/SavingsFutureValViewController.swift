@@ -119,7 +119,8 @@ class SavingsFutureValViewController: ParentViewController {
                 tf_FutureValue.layer.borderColor = greenTFColor.cgColor
                 tf_FutureValue.layer.borderWidth = 1.0
             }
-            
+           //            save user entered text field values
+            saveTfDataAppClose()
             
         }
         

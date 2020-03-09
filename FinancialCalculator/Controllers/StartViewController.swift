@@ -28,9 +28,11 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let savings = Selection(name: "Savings", icon: UIImage(named: "savings")!, segueID: "2", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
         
-         let mortgage = Selection(name: "Mortgage", icon: UIImage(named: "mortage")!, segueID: "3", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
+        let loan = Selection(name: "Loan", icon: UIImage(named: "loan")!, segueID: "3", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
         
-        selections += [compoundInterest, savings, mortgage]
+         let mortgage = Selection(name: "Mortgage", icon: UIImage(named: "mortage")!, segueID: "4", cellColour: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00))
+        
+        selections += [compoundInterest, savings, loan, mortgage]
         
     }
     
@@ -73,6 +75,9 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
 
         case 3:
             nextView.selectedIndex = 2
+            
+        case 4:
+            nextView.selectedIndex = 3
 
         default:
             break

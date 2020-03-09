@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
          let defaults = UserDefaults.standard
-         let defaultValue = ["mortgage_interest" : "0", "mortgage_loanAmount" : "0", "mortgage_noOfMonths" : "0", "mortgage_payment" : "0", "compound_presentValue" : "0", "compound_futureValue" : "0", "compound_interest" : "0", "compound_compoundsPerYear" : "0", "compound_noOfMonths" : "0", "compound_payment" : "0", "savings_presentValue" : "0", "savings_futureValue" : "0", "savings_interest" : "0", "savings_totalValue" : "0", "savings_noOfMonths" : "0", "savings_payment" : "0", "savings_interest_amount" : "0"]
+         let defaultValue = ["mortgage_interest" : "0", "mortgage_loanAmount" : "0", "mortgage_noOfMonths" : "0", "mortgage_payment" : "0", "compound_presentValue" : "0", "compound_futureValue" : "0", "compound_interest" : "0", "compound_compoundsPerYear" : "0", "compound_noOfMonths" : "0", "compound_payment" : "0", "savings_presentValue" : "0", "savings_futureValue" : "0", "savings_interest" : "0", "savings_totalValue" : "0", "savings_noOfMonths" : "0", "savings_payment" : "0", "savings_interest_amount" : "0", "loan_interest" : "0", "loan_loanAmount" : "0", "loan_noOfMonths" : "0", "loan_payment" : "0"]
          defaults.register(defaults: defaultValue)
         return true
     }

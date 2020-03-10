@@ -23,7 +23,7 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
     
     var helpArray = [Dictionary<String,String>]()
     
-    var vcOne : Bool = true
+    var isCalculate : Bool = true
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if(vcOne)
+        if(isCalculate)
         {
             helpArray = [help1,help2,help3,help4]
             scrollView.isPagingEnabled = true

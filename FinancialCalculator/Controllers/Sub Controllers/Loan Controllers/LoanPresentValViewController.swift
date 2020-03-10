@@ -22,6 +22,7 @@ class LoanPresentValViewController: ParentViewController {
         
     }
     
+    //    save text field data when view disappears
     override func viewWillDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -66,12 +67,14 @@ class LoanPresentValViewController: ParentViewController {
                     updateFields()
                 }
             }else{
+                //deletes the last character of the selected text field
                 selectedText?.text = String((selectedText?.text?.dropLast())!)
                 
                 if((selectedText?.text?.count)! > 0) {
                     updateFields()
                 } else {
                     
+                    //alert to clear all the text fields
                     let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
                         self.clearTextFields()
@@ -211,6 +214,7 @@ class LoanPresentValViewController: ParentViewController {
         tf_NoOfMonths.inputView = UIView()
     }
     
+    //    back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

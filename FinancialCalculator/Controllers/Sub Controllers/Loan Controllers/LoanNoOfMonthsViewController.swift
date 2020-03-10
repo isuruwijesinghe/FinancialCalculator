@@ -22,6 +22,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
         
     }
     
+    //save text field data when view disappears
     override func viewWillDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -66,12 +67,13 @@ class LoanNoOfMonthsViewController: ParentViewController {
                     updateFields()
                 }
             }else{
+                //deletes the last character of the selected text field
                 selectedText?.text = String((selectedText?.text?.dropLast())!)
                 
                 if((selectedText?.text?.count)! > 0) {
                     updateFields()
                 } else {
-                    
+                    //alert to clear all the text fields
                     let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
                         self.clearTextFields()
@@ -107,6 +109,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
             let redTFColor = UIColor.red
             let greenTFColor = UIColor.green
             
+            //change the border color of the text field red or green
             if tf_NoOfMonths.text == "0" {
                 tf_NoOfMonths.layer.borderColor = redTFColor.cgColor
                 tf_NoOfMonths.layer.borderWidth = 1.0
@@ -114,7 +117,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
                 tf_NoOfMonths.layer.borderColor = greenTFColor.cgColor
                 tf_NoOfMonths.layer.borderWidth = 1.0
             }
-            //            save user entered text field values
+            //save user entered text field values
             saveTfDataAppClose()
         }
         
@@ -178,6 +181,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
         let redTFColor = UIColor.red
         let greenTFColor = UIColor.green
         
+        //change the border color of the text field red or green
         if tf_NoOfMonths.text == "0" {
             tf_NoOfMonths.layer.borderColor = redTFColor.cgColor
             tf_NoOfMonths.layer.borderWidth = 1.0
@@ -197,6 +201,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
         
         let redTFColor = UIColor.red
         
+        //change the border color of the text field red
         if tf_NoOfMonths.text == "0" {
             tf_NoOfMonths.layer.borderColor = redTFColor.cgColor
             tf_NoOfMonths.layer.borderWidth = 1.0
@@ -211,6 +216,7 @@ class LoanNoOfMonthsViewController: ParentViewController {
         tf_NoOfMonths.inputView = UIView()
     }
     
+    //back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

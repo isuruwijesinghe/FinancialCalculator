@@ -22,6 +22,7 @@ class MortgageViewController: ParentViewController {
         
     }
     
+    //save text field data when view disappears
     override func viewWillDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -106,7 +107,7 @@ class MortgageViewController: ParentViewController {
             
             let redTFColor = UIColor.red
             let greenTFColor = UIColor.green
-            
+            //change the border color of the text field red or green
             if tf_Payment.text == "0" {
                 tf_Payment.layer.borderColor = redTFColor.cgColor
                 tf_Payment.layer.borderWidth = 1.0
@@ -177,7 +178,7 @@ class MortgageViewController: ParentViewController {
         
         let redTFColor = UIColor.red
         let greenTFColor = UIColor.green
-        
+        //change the border color of the text field red or green
         if tf_Payment.text == "0" {
             tf_Payment.layer.borderColor = redTFColor.cgColor
             tf_Payment.layer.borderWidth = 1.0
@@ -196,7 +197,7 @@ class MortgageViewController: ParentViewController {
         tf_NoOfMonths.text = "0"
         
         let redTFColor = UIColor.red
-        
+        //change the border color of the text field red
         if tf_Payment.text == "0" {
             tf_Payment.layer.borderColor = redTFColor.cgColor
             tf_Payment.layer.borderWidth = 1.0
@@ -211,6 +212,7 @@ class MortgageViewController: ParentViewController {
         tf_NoOfMonths.inputView = UIView()
     }
     
+    //back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

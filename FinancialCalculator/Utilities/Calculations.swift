@@ -294,7 +294,7 @@ class Calculations: NSObject {
         
         let I = Double(12 * x * 100)
         
-        print("DEBUG", I)
+//        print("DEBUG", I)
         
         // if the found value for I is inf or less than zero
         // there's no interest applied

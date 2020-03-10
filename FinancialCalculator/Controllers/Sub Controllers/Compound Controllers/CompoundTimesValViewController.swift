@@ -29,6 +29,7 @@ class CompoundTimesValViewController: ParentViewController {
         // Do any additional setup after loading the view.
     }
     
+    //save text field data when view disappears
     override func viewDidDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -233,6 +234,7 @@ class CompoundTimesValViewController: ParentViewController {
         tf_CompoundsPerYear.inputView = UIView()
     }
     
+    //back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

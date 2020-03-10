@@ -24,6 +24,7 @@ class SavingsPresentValViewController: ParentViewController {
         // Do any additional setup after loading the view.
     }
     
+    //save text field data when view disappears
     override func viewDidDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -218,6 +219,7 @@ class SavingsPresentValViewController: ParentViewController {
         tf_NoOfPayments.inputView = UIView()
     }
     
+    //back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

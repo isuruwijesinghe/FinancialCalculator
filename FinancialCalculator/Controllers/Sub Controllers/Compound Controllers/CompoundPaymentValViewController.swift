@@ -29,6 +29,7 @@ class CompoundPaymentValViewController: ParentViewController {
         // Do any additional setup after loading the view.
     }
     
+    //save text field data when view disappears
     override func viewDidDisappear(_ animated: Bool) {
         saveTfDataAppClose()
     }
@@ -239,6 +240,7 @@ class CompoundPaymentValViewController: ParentViewController {
         tf_Payment.inputView = UIView()
     }
     
+    //back button action to go to previous view
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

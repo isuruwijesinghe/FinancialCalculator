@@ -67,12 +67,13 @@ class MortgageViewController: ParentViewController {
                     updateFields()
                 }
             }else{
+                //deletes the last character of the selected text field
                 selectedText?.text = String((selectedText?.text?.dropLast())!)
                 
                 if((selectedText?.text?.count)! > 0) {
                     updateFields()
                 } else {
-                    
+                    //alert to clear all the text fields
                     let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
                         self.clearTextFields()

@@ -13,19 +13,19 @@ class CompoundFutureValViewController: ParentViewController {
     @IBOutlet weak var tf_PresentValue: UITextField!
     @IBOutlet weak var tf_FutureValue: UITextField!
     @IBOutlet weak var tf_Interest: UITextField!
-//    @IBOutlet weak var tf_Payment: UITextField!
+    //    @IBOutlet weak var tf_Payment: UITextField!
     @IBOutlet weak var tf_NoOfPayments: UITextField!
     @IBOutlet weak var tf_CompoundsPerYear: UITextField!
-//    @IBOutlet weak var BeginEndSwitch: UISwitch!
-//    @IBOutlet weak var beginEndLabel: UILabel!
+    //    @IBOutlet weak var BeginEndSwitch: UISwitch!
+    //    @IBOutlet weak var beginEndLabel: UILabel!
     var switchValue : String = "End"
     var unit: String = "none"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         disableKeyBoards()
         getDataWhenReopen()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -35,74 +35,76 @@ class CompoundFutureValViewController: ParentViewController {
     }
     
     //get inputs from custom keyboard
-       override func keyboardKeyPressed(value: String) {
-           var selectedText: UITextField? = nil
-           
-           
-           if (tf_PresentValue.isFirstResponder) {
-               selectedText = tf_PresentValue
-               unit = "present"
-               
-           }else if (tf_FutureValue.isFirstResponder){
-               selectedText = tf_FutureValue
-               unit = "future"
-               
-           }else if (tf_Interest.isFirstResponder){
-               selectedText = tf_Interest
-               unit = "interest"
-               
-           }else if (tf_NoOfPayments.isFirstResponder){
-               selectedText = tf_NoOfPayments
-               unit = "noOfPayments"
-               
-           }else if (tf_CompoundsPerYear.isFirstResponder){
-               selectedText = tf_CompoundsPerYear
-               unit = "compoundsPerYear"
-               
-           }
-           else{
-               unit = "none"
-           }
-           
-           if(unit != "none"){
-               
-               
-               if(value == "NEG"){
-                   // Check if NEG("-") is already there
-                   if(!(value == "NEG" && (selectedText?.text?.contains("-"))!)){
-                       let currentText = selectedText?.text
-                       selectedText?.text?.insert("-", at: (currentText?.index(currentText!.startIndex, offsetBy: 0))!)
-                   }
-                   
-               }else if(value != "DEL"){
-                   // Check if decimal place is already there
-                    if(!(value == "." && (selectedText?.text?.contains("."))!))
-                        {
-                           selectedText?.text = ((selectedText?.text!)!) + value
-                                      
-                               if(selectedText?.text?.first == "0") {
-                                       selectedText?.text=String((selectedText?.text?.dropFirst())!)
-                                      }
-                                   updateFields()
-                           }
-               }else{
-                   selectedText?.text = String((selectedText?.text?.dropLast())!)
-                   
-                   if((selectedText?.text?.count)! > 0) {
-                       updateFields()
-                   } else {
-                        let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
-                            self.clearTextFields()
-                        }))
-                        
-                        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil ))
-                        
-                        self.present(alert, animated: true, completion: nil)
-                   }
-               }
-           }
-       }
+    override func keyboardKeyPressed(value: String) {
+        var selectedText: UITextField? = nil
+        
+        
+        if (tf_PresentValue.isFirstResponder) {
+            selectedText = tf_PresentValue
+            unit = "present"
+            
+        }else if (tf_FutureValue.isFirstResponder){
+            selectedText = tf_FutureValue
+            unit = "future"
+            
+        }else if (tf_Interest.isFirstResponder){
+            selectedText = tf_Interest
+            unit = "interest"
+            
+        }else if (tf_NoOfPayments.isFirstResponder){
+            selectedText = tf_NoOfPayments
+            unit = "noOfPayments"
+            
+        }else if (tf_CompoundsPerYear.isFirstResponder){
+            selectedText = tf_CompoundsPerYear
+            unit = "compoundsPerYear"
+            
+        }
+        else{
+            unit = "none"
+        }
+        
+        if(unit != "none"){
+            
+            
+            if(value == "NEG"){
+                // Check if NEG("-") is already there
+                if(!(value == "NEG" && (selectedText?.text?.contains("-"))!)){
+                    let currentText = selectedText?.text
+                    selectedText?.text?.insert("-", at: (currentText?.index(currentText!.startIndex, offsetBy: 0))!)
+                }
+                
+            }else if(value != "DEL"){
+                // Check if decimal place is already there
+                if(!(value == "." && (selectedText?.text?.contains("."))!))
+                {
+                    selectedText?.text = ((selectedText?.text!)!) + value
+                    
+                    if(selectedText?.text?.first == "0") {
+                        selectedText?.text=String((selectedText?.text?.dropFirst())!)
+                    }
+                    updateFields()
+                }
+            }else{
+                //deletes the last character of the selected text field
+                selectedText?.text = String((selectedText?.text?.dropLast())!)
+                
+                if((selectedText?.text?.count)! > 0) {
+                    updateFields()
+                } else {
+                    //alert to clear all the text fields
+                    let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+                        self.clearTextFields()
+                    }))
+                    
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil ))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     
     // method to calculate and update the text fields
     func updateFields(){
@@ -112,7 +114,7 @@ class CompoundFutureValViewController: ParentViewController {
             //update update the future value
             let presentValue = (tf_PresentValue.text! as NSString).doubleValue
             var interest = (tf_Interest.text! as NSString).doubleValue
-             //convert interest to decimal
+            //convert interest to decimal
             interest = interest / 100
             let noOfPayments = (tf_NoOfPayments.text! as NSString).doubleValue
             let compoundsPerYear = (tf_CompoundsPerYear.text! as NSString).doubleValue
@@ -158,7 +160,7 @@ class CompoundFutureValViewController: ParentViewController {
         
         let storage = Storage.getData(key: "compound")
         if(storage.count > 0){
-         // History page list code here
+            // History page list code here
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
             self.present(destination, animated: true, completion: nil)
@@ -205,8 +207,8 @@ class CompoundFutureValViewController: ParentViewController {
             tf_FutureValue.layer.borderColor = greenTFColor.cgColor
             tf_FutureValue.layer.borderWidth = 1.0
         }
-
-
+        
+        
     }
     
     
@@ -238,16 +240,16 @@ class CompoundFutureValViewController: ParentViewController {
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

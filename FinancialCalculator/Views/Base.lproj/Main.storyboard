@@ -1147,7 +1147,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-BG-BE2">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="69.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <state key="normal" title="1"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleShadowColor" red="0.21960784310000001" green="0.58431372550000005" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="keyboardButtonPressed:" destination="zfr-YY-iSJ" eventType="touchUpInside" id="epM-hO-GWx"/>
                                         </connections>
@@ -1177,6 +1179,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f7W-8t-Xv9">
                                 <rect key="frame" x="134" y="0.0" width="110" height="278"/>

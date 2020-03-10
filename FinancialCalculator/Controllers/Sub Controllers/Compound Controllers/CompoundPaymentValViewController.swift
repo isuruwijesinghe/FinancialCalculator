@@ -94,11 +94,13 @@ class CompoundPaymentValViewController: ParentViewController {
                     updateFields()
                 }
             }else{
+                //deletes the last character of the selected text field
                 selectedText?.text = String((selectedText?.text?.dropLast())!)
                 
                 if((selectedText?.text?.count)! > 0) {
                     updateFields()
                 } else {
+                    //alert to clear all the text fields
                     let alert = UIAlertController(title: "Alert", message: "Do want to clear all the fields ?", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
                         self.clearTextFields()
@@ -142,7 +144,7 @@ class CompoundPaymentValViewController: ParentViewController {
                 tf_Payment.layer.borderColor = greenTFColor.cgColor
                 tf_Payment.layer.borderWidth = 1.0
             }
-            //            save user entered text field values
+            //save user entered text field values
             saveTfDataAppClose()
         }
         

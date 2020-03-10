@@ -9,16 +9,17 @@
 import UIKit
 
 class KeyboardViewController: UIViewController {
-
+    
     @IBOutlet weak var btnNegate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnNegate.isHidden = true
-
+        
         // Do any additional setup after loading the view.
     }
     
+    //keyboard button press action
     @IBAction func keyboardButtonPressed(_ sender: UIButton) {
         let viewController = self.parent as! ParentViewController
         viewController.keyboardKeyPressed(value: (sender.titleLabel?.text!)!)

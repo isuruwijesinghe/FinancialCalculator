@@ -19,11 +19,11 @@ class Calculations: NSObject {
     //     noOfPayments(time) = t
     //     compoundsPerYear = n
     
-//    var FutureAmount =  P * pow(1 + (R / n), n * t)
-//    var PrincipalAmount = A / pow(1 + (R / n), n * t)
-//    var InterstRate = n * pow((A / P), 1 / (n * t) ) - 1
-//    var Time = log(A / P) / n * log(1 + R / n)
-//    var PMT =  (A * R) / ((pow((1 + R), t) - 1) * (1 + R * 0)) last 0 is default 1 if begin
+    //    var FutureAmount =  P * pow(1 + (R / n), n * t)
+    //    var PrincipalAmount = A / pow(1 + (R / n), n * t)
+    //    var InterstRate = n * pow((A / P), 1 / (n * t) ) - 1
+    //    var Time = log(A / P) / n * log(1 + R / n)
+    //    var PMT =  (A * R) / ((pow((1 + R), t) - 1) * (1 + R * 0)) last 0 is default 1 if begin
     
     static func calFutureValue(P:Double, R:Double, n:Double, t:Double) -> Double{
         let answer: Double = P * pow(1 + (R / n), n * t)
@@ -81,7 +81,7 @@ class Calculations: NSObject {
     
     // MARK: - Savings calculations
     
-//    calculations ref -https://www.calculatorsoup.com/calculators/financial/simple-interest-plus-principal-calculator.php
+    //    calculations ref -https://www.calculatorsoup.com/calculators/financial/simple-interest-plus-principal-calculator.php
     
     //     presentValue = P
     //     futureValue = A
@@ -92,12 +92,12 @@ class Calculations: NSObject {
     //     totalValue = Tot
     //     InterestValue = I
     
-//    let FutureValue = PMT * ((pow((1 + R / n) , (n * t) ) - 1) / (R / n))
-//    let FutureValue  = P(1 + rt)
-//    let TotalValue = FV + P
-//    let PresentValue = P = A / (1 + rt)
-//    let Interest Rate = (1/t)(A/P - 1)
-//    let Time = (1/r)(A/P - 1)
+    //    let FutureValue = PMT * ((pow((1 + R / n) , (n * t) ) - 1) / (R / n))
+    //    let FutureValue  = P(1 + rt)
+    //    let TotalValue = FV + P
+    //    let PresentValue = P = A / (1 + rt)
+    //    let Interest Rate = (1/t)(A/P - 1)
+    //    let Time = (1/r)(A/P - 1)
     
     static func calSavingsFutureValue(P:Double, R:Double, t:Double) -> Double{
         let answer: Double =  P * (1 + R * t)
@@ -152,8 +152,8 @@ class Calculations: NSObject {
     //     noOfPayments = n
     //    compoundsperyear = t = 12 by defult
     
-//   payment = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
-//    var Present  = (PMT * ( pow((1 + R/t), (n*t)) - 1 )) / ( R/t * pow((1 + R/t), (n*t)))
+    //   payment = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
+    //    var Present  = (PMT * ( pow((1 + R/t), (n*t)) - 1 )) / ( R/t * pow((1 + R/t), (n*t)))
     
     static func calPMTValue(P:Double, R:Double, n:Double, t:Double) -> Double{
         let answer: Double = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
@@ -230,12 +230,12 @@ class Calculations: NSObject {
     }
     
     // MARK: - Loan calculations
-       
-       //     presentValue = P
-       //     interest = R
-       //     payment = PMT
-       //     noOfPayments = n
-       //    compoundsperyear = t = 12 by defult
+    
+    //     presentValue = P
+    //     interest = R
+    //     payment = PMT
+    //     noOfPayments = n
+    //    compoundsperyear = t = 12 by defult
     
     static func calLoanPMTValue(P:Double, R:Double, n:Double) -> Double{
         let i = (R / 12)
@@ -294,7 +294,7 @@ class Calculations: NSObject {
         
         let I = Double(12 * x * 100)
         
-//        print("DEBUG", I)
+        //        print("DEBUG", I)
         
         // if the found value for I is inf or less than zero
         // there's no interest applied

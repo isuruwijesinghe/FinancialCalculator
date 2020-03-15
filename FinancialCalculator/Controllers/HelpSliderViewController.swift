@@ -68,7 +68,7 @@ class HelpSliderViewController: UIViewController, UIScrollViewDelegate {
                 
                 helpView.helpImage.image = UIImage(named: help["image"]!)
                 helpView.helpLabel.text = help["text"]
-                
+                                
                 scrollView.addSubview(helpView)
                 helpView.frame.size.width = self.view.bounds.size.width
                 helpView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width

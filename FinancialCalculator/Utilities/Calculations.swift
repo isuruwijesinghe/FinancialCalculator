@@ -92,7 +92,6 @@ class Calculations: NSObject {
     //     totalValue = Tot
     //     InterestValue = I
     
-    //    let FutureValue = PMT * ((pow((1 + R / n) , (n * t) ) - 1) / (R / n))
     //    let FutureValue  = P(1 + rt)
     //    let TotalValue = FV + P
     //    let PresentValue = P = A / (1 + rt)

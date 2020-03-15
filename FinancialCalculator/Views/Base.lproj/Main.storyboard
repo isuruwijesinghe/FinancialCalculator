@@ -968,12 +968,13 @@
                         <color key="backgroundColor" red="0.21960784310000001" green="0.58431372550000005" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="o4g-se-qep" firstAttribute="bottom" secondItem="LN9-1o-DyJ" secondAttribute="bottom" constant="29" id="4oW-H7-vmA"/>
+                            <constraint firstItem="Ljx-0n-jQy" firstAttribute="centerY" secondItem="Xic-9e-VRU" secondAttribute="centerY" id="FHE-qR-imi"/>
                             <constraint firstItem="Ljx-0n-jQy" firstAttribute="leading" secondItem="o4g-se-qep" secondAttribute="leading" id="IXw-aL-ysn"/>
                             <constraint firstItem="U5V-yz-uJI" firstAttribute="top" secondItem="o4g-se-qep" secondAttribute="top" id="Pjd-cq-lcb"/>
-                            <constraint firstItem="Ljx-0n-jQy" firstAttribute="top" secondItem="U5V-yz-uJI" secondAttribute="bottom" id="QlS-3H-n4G"/>
                             <constraint firstItem="Ljx-0n-jQy" firstAttribute="trailing" secondItem="o4g-se-qep" secondAttribute="trailing" id="Z4R-58-8cQ"/>
                             <constraint firstItem="U5V-yz-uJI" firstAttribute="leading" secondItem="Xic-9e-VRU" secondAttribute="leading" id="gAN-q5-n9w"/>
                             <constraint firstItem="o4g-se-qep" firstAttribute="trailing" secondItem="U5V-yz-uJI" secondAttribute="trailing" id="ils-UU-6d0"/>
+                            <constraint firstItem="Ljx-0n-jQy" firstAttribute="centerX" secondItem="Xic-9e-VRU" secondAttribute="centerX" id="qoi-qz-k8E"/>
                             <constraint firstItem="LN9-1o-DyJ" firstAttribute="centerX" secondItem="Xic-9e-VRU" secondAttribute="centerX" id="rsa-sj-UUJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o4g-se-qep"/>

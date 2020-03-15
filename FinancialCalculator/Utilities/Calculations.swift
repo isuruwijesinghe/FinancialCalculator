@@ -153,7 +153,8 @@ class Calculations: NSObject {
     //    compoundsperyear = t = 12 by defult
     
     //   payment = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
-    //    var Present  = (PMT * ( pow((1 + R/t), (n*t)) - 1 )) / ( R/t * pow((1 + R/t), (n*t)))
+    //   Present  = (PMT * ( pow((1 + R/t), (n*t)) - 1 )) / ( R/t * pow((1 + R/t), (n*t)))
+//    noOfPayments = (log(PMT / i) - log((PMT / i) - P)) / log(1 + i)
     
     static func calPMTValue(P:Double, R:Double, n:Double, t:Double) -> Double{
         let answer: Double = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
@@ -182,8 +183,6 @@ class Calculations: NSObject {
         if noOfYears.isNaN || noOfYears.isInfinite || noOfYears < 0 {
             return 0.0;
         } else {
-            // this may return a value more than 100% for cases such as
-            // where payment = 2000, terms = 12, amount = 10000  <--- unreal figures
             return noOfYears
         }
     }
@@ -236,6 +235,10 @@ class Calculations: NSObject {
     //     payment = PMT
     //     noOfPayments = n
     //    compoundsperyear = t = 12 by defult
+    
+     //   payment = (P * ( R/t * pow((1 + R/t), (n*t)))) / ( pow((1 + R/t), (n*t)) - 1 )
+    //   Present  = PMT / i * ( 1 - (1 / (pow(1 + i, n))))
+    //    noOfPayments = (log(PMT / i) - log((PMT / i) - P)) / log(1 + i)
     
     static func calLoanPMTValue(P:Double, R:Double, n:Double) -> Double{
         let i = (R / 12)

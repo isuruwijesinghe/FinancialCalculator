@@ -94,7 +94,28 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         m_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:16,length:4))
         m_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:40,length:4))
         
-        formulas.append(Formula.init(type: "Mortgage", formulaName: ["Payment", "Principal Value"], formulas: [m_PMTValue, m_PValue]))
+        let m_TValue:NSMutableAttributedString = NSMutableAttributedString(string: "t = log[(PMT/i) / ((PMT/i) - P)] / log(1 + i)", attributes: [.font:font!])
+        m_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        m_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        formulas.append(Formula.init(type: "Mortgage", formulaName: ["Payment", "Principal Value", "No . of Times"], formulas: [m_PMTValue, m_PValue, m_TValue]))
+
+        
+    // MARK: - Loan
+        
+        let l_PMTValue:NSMutableAttributedString = NSMutableAttributedString(string: "PMT = P(R/t)(1 + R/t)(nt) / (1 + R/t)(nt) - 1 ", attributes: [.font:font!])
+        l_PMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:21,length:4))
+        l_PMTValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:37,length:4))
+        
+        let l_PValue:NSMutableAttributedString = NSMutableAttributedString(string: "P = PMT(1 + R/t)(nt) - 1) / R/t(1 + R/t)(nt)", attributes: [.font:font!])
+        l_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:16,length:4))
+        l_PValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:40,length:4))
+        
+        let l_TValue:NSMutableAttributedString = NSMutableAttributedString(string: "t = log[(PMT/i) / ((PMT/i) - P)] / log(1 + i)", attributes: [.font:font!])
+        l_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        l_TValue.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:0,length:0))
+        
+        formulas.append(Formula.init(type: "Loan", formulaName: ["Payment", "Principal Value", "No . of Times"], formulas: [l_PMTValue, l_PValue, l_TValue]))
 
         
     }
